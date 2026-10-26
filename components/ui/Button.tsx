@@ -2,7 +2,14 @@ import Link from 'next/link';
 import { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
-type Variant = 'primary' | 'secondary' | 'ghost' | 'invert' | 'invertOutline' | 'campaignSolid' | 'campaignOutline';
+type Variant =
+  | 'primary'
+  | 'secondary'
+  | 'ghost'
+  | 'invert'
+  | 'invertOutline'
+  | 'campaignSolid'
+  | 'campaignOutline';
 type Size = 'md' | 'lg';
 
 const base =
@@ -35,19 +42,24 @@ interface CommonProps {
   children: ReactNode;
 }
 
-type ButtonAsButton = CommonProps &
-  ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
+type ButtonAsButton = CommonProps & ButtonHTMLAttributes<HTMLButtonElement> & { href?: undefined };
 
-type ButtonAsLink = CommonProps &
-  AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
+type ButtonAsLink = CommonProps & AnchorHTMLAttributes<HTMLAnchorElement> & { href: string };
 
 export default function Button(props: ButtonAsButton | ButtonAsLink) {
   const { variant = 'primary', size = 'md', className, children, ...rest } = props;
   const classes = cn(base, variants[variant], sizes[size], className);
-  const content = variant === 'campaignSolid' || variant === 'campaignOutline' ? <>
-    <span>{children}</span>
-    <span aria-hidden="true" className="hero-cta-reveal">{children}</span>
-  </> : children;
+  const content =
+    variant === 'campaignSolid' || variant === 'campaignOutline' ? (
+      <>
+        <span>{children}</span>
+        <span aria-hidden="true" className="hero-cta-reveal">
+          {children}
+        </span>
+      </>
+    ) : (
+      children
+    );
 
   if ('href' in props && props.href) {
     const { href, ...anchorRest } = rest as AnchorHTMLAttributes<HTMLAnchorElement>;

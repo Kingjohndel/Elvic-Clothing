@@ -1,2 +1,56 @@
-import PlaceholderImage from '@/components/ui/PlaceholderImage';
-export default function BrandStory() { return (<section className="py-24 md:py-32"><div className="container-elvic grid gap-14 lg:grid-cols-2 lg:gap-20"><div className="home-hover-card lookbook-interactive relative aspect-[4/5] w-full overflow-hidden bg-bone"><PlaceholderImage className="lookbook-image" src="/images/editorial/elvic-brand-story.webp" label="A considered edit of fabrics and clothing for ELVIC" /><div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/60 to-transparent px-6 pb-8 pt-12 text-center sm:pb-10"><p className="text-eyebrow text-[10px] font-medium text-ivory/75 sm:text-xs">Our Story</p></div></div><div><p className="text-eyebrow mb-5 text-xs font-medium text-stone">Brand Story</p><h2 className="font-display text-3xl leading-[1.15] text-ink sm:text-4xl md:text-5xl">Built on identity, confidence and curation.</h2><p className="mt-6 max-w-lg text-base leading-relaxed text-graphite">ELVIC started with a simple frustration: most fashion retail asks you to wade through everything to find the few pieces worth wearing. We wanted the opposite: a single, considered destination. Every edit is chosen around fit, fabric and form first, so the person wearing it, not the label, always comes through.</p><dl className="mt-10 space-y-8"><div className="border-t border-line pt-6"><dt className="font-display text-xl text-ink">Identity</dt><dd className="mt-2 text-sm leading-relaxed text-graphite">We curate clothing as a form of self-authorship: pieces that let you decide who you are before you say a word.</dd></div><div className="border-t border-line pt-6"><dt className="font-display text-xl text-ink">Curation</dt><dd className="mt-2 text-sm leading-relaxed text-graphite">Every piece earns its place through the same lens: fabric, fit and how it holds up close. Quality isn’t a marketing line here. It’s the standard we shop by.</dd></div><div className="border-t border-line pt-6"><dt className="font-display text-xl text-ink">Individuality</dt><dd className="mt-2 text-sm leading-relaxed text-graphite">ELVIC isn’t built around one label or trend. It’s built around the person wearing it, and how the right piece, from whichever brand makes it, moves with them.</dd></div></dl></div></div></section>); }
+import CatalogImage from '@/components/ui/CatalogImage';
+export default function BrandStory() {
+  return (
+    <section className="py-24 md:py-32">
+      <div className="container-elvic grid gap-14 lg:grid-cols-2 lg:gap-20">
+        <div className="home-hover-card lookbook-interactive relative aspect-[4/5] w-full overflow-hidden bg-bone">
+          <CatalogImage
+            className="lookbook-image"
+            src="/images/editorial/elvic-brand-story.webp"
+            label="A considered edit of fabrics and clothing for ELVIC"
+          />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/60 to-transparent px-6 pb-8 pt-12 text-center sm:pb-10">
+            <p className="text-eyebrow text-[10px] font-medium text-ivory/75 sm:text-xs">
+              Our Story
+            </p>
+          </div>
+        </div>
+        <div>
+          <p className="text-eyebrow mb-5 text-xs font-medium text-stone">Brand Story</p>
+          <h2 className="font-display text-3xl leading-[1.15] text-ink sm:text-4xl md:text-5xl">
+            Built on identity, confidence and curation.
+          </h2>
+          <p className="mt-6 max-w-lg text-base leading-relaxed text-graphite">
+            ELVIC started with a simple frustration: most fashion retail asks you to wade through
+            everything to find the few pieces worth wearing. We wanted the opposite: a single,
+            considered destination. Every edit is chosen around fit, fabric and form first, so the
+            person wearing it, not the label, always comes through.
+          </p>
+          <dl className="mt-10 space-y-8">
+            <div className="border-t border-line pt-6">
+              <dt className="font-display text-xl text-ink">Identity</dt>
+              <dd className="mt-2 text-sm leading-relaxed text-graphite">
+                We curate clothing as a form of self-authorship: pieces that let you decide who you
+                are before you say a word.
+              </dd>
+            </div>
+            <div className="border-t border-line pt-6">
+              <dt className="font-display text-xl text-ink">Curation</dt>
+              <dd className="mt-2 text-sm leading-relaxed text-graphite">
+                Every piece earns its place through the same lens: fabric, fit and how it holds up
+                close. Quality isn’t a marketing line here. It’s the standard we shop by.
+              </dd>
+            </div>
+            <div className="border-t border-line pt-6">
+              <dt className="font-display text-xl text-ink">Individuality</dt>
+              <dd className="mt-2 text-sm leading-relaxed text-graphite">
+                ELVIC isn’t built around one label or trend. It’s built around the person wearing
+                it, and how the right piece, from whichever brand makes it, moves with them.
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -13,12 +13,14 @@ export default function CookiesPage() {
     <div className="container-elvic py-10 md:py-14">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Cookie Policy' }]} />
       <h1 className="mt-6 font-display text-4xl text-ink sm:text-5xl">Cookie Policy</h1>
-      <p className="mt-3 text-xs text-stone">Last updated: placeholder: set this when the policy is finalized.</p>
+      <p className="mt-3 text-xs text-stone">
+        Last updated: placeholder: set this when the policy is finalized.
+      </p>
 
       <div className="mt-10 max-w-2xl space-y-8 text-sm leading-relaxed text-graphite">
         <p className="border border-line bg-bone p-4 text-xs text-graphite">
-          This is a template cookie policy for a demo storefront. It is not legal advice. Have
-          this reviewed by qualified counsel before publishing it for a live business.
+          This is a template cookie policy for a demo storefront. It is not legal advice. Have this
+          reviewed by qualified counsel before publishing it for a live business.
         </p>
         <section>
           <h2 className="mb-3 font-display text-xl text-ink">What Are Cookies</h2>
@@ -30,9 +32,9 @@ export default function CookiesPage() {
         <section>
           <h2 className="mb-3 font-display text-xl text-ink">How We Use Them</h2>
           <p>
-            This demo site uses your browser&rsquo;s local storage (a cookie-adjacent technology)
-            to remember your shopping bag and wishlist between visits, entirely on your device. It
-            does not currently use tracking or advertising cookies.
+            This demo site uses your browser&rsquo;s local storage (a cookie-adjacent technology) to
+            remember your shopping bag and wishlist between visits, entirely on your device. It does
+            not currently use tracking or advertising cookies.
           </p>
         </section>
         <section>

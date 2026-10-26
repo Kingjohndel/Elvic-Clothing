@@ -49,7 +49,8 @@ export default function Footer() {
             ELVIC
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-bone/70">
-            A curated multi-brand fashion destination: considered pieces from the brands worth wearing, brought together in one place.
+            A curated multi-brand fashion destination: considered pieces from the brands worth
+            wearing, brought together in one place.
           </p>
           <ul className="mt-6 flex flex-wrap gap-4">
             {SOCIAL_LINKS.map((s) => (
@@ -80,7 +81,21 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <nav aria-label="Brands"><h3 className="text-eyebrow mb-4 text-xs font-medium text-bone/50">Brands</h3><ul className="space-y-3"><li><Link href="/brands" className="text-sm text-bone/80 hover:text-ivory">All Brands</Link></li><li><Link href="/brands#featured" className="text-sm text-bone/80 hover:text-ivory">Featured Brands</Link></li></ul></nav>
+        <nav aria-label="Brands">
+          <h3 className="text-eyebrow mb-4 text-xs font-medium text-bone/50">Brands</h3>
+          <ul className="space-y-3">
+            <li>
+              <Link href="/brands" className="text-sm text-bone/80 hover:text-ivory">
+                All Brands
+              </Link>
+            </li>
+            <li>
+              <Link href="/brands#featured" className="text-sm text-bone/80 hover:text-ivory">
+                Featured Brands
+              </Link>
+            </li>
+          </ul>
+        </nav>
 
         <nav aria-label="Information">
           <h3 className="text-eyebrow mb-4 text-xs font-medium text-bone/50">Information</h3>
@@ -115,7 +130,10 @@ export default function Footer() {
 
       <div className="container-elvic flex flex-col gap-3 border-t border-ivory/10 py-6 text-xs text-bone/50 sm:flex-row sm:items-center sm:justify-between">
         <p>&copy; {new Date().getFullYear()} ELVIC CLOTHING. All rights reserved.</p>
-        <p>Demo storefront: imagery is AI-generated and illustrative; it does not depict the exact branded products. Product data and pricing are examples.</p>
+        <p>
+          Demo storefront: imagery is AI-generated and illustrative; it does not depict the exact
+          branded products. Product data and pricing are examples.
+        </p>
       </div>
     </footer>
   );

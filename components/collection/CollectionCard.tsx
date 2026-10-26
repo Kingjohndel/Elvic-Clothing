@@ -1,17 +1,22 @@
 import { editorialPhoto } from '@/lib/imagery';
 import Link from 'next/link';
 import { Collection } from '@/lib/types';
-import PlaceholderImage from '@/components/ui/PlaceholderImage';
+import CatalogImage from '@/components/ui/CatalogImage';
 
 export default function CollectionCard({ collection }: { collection: Collection }) {
   return (
-    <Link href={`/collections/${collection.slug}`} className="collection-card home-hover-card group block border border-line bg-ivory focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+    <Link
+      href={`/collections/${collection.slug}`}
+      className="collection-card home-hover-card group block border border-line bg-ivory focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink"
+    >
       <div className="relative aspect-[4/5] w-full overflow-hidden bg-bone">
         <div className="lookbook-image h-full w-full">
-          <PlaceholderImage src={editorialPhoto(collection.slug)} label={collection.name} />
+          <CatalogImage src={editorialPhoto(collection.slug)} label={collection.name} />
         </div>
         <div className="absolute inset-0 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/10" />
-        <div className={`pointer-events-none absolute inset-x-0 bottom-0 px-6 pb-8 pt-12 text-center sm:pb-10 ${collection.tone >= 5 ? 'bg-gradient-to-t from-ink/60 to-transparent text-ivory' : 'bg-gradient-to-t from-bone/85 to-transparent text-ink'}`}>
+        <div
+          className={`pointer-events-none absolute inset-x-0 bottom-0 px-6 pb-8 pt-12 text-center sm:pb-10 ${collection.tone >= 5 ? 'bg-gradient-to-t from-ink/60 to-transparent text-ivory' : 'bg-gradient-to-t from-bone/85 to-transparent text-ink'}`}
+        >
           <p className="text-eyebrow text-[10px] font-medium opacity-75 sm:text-xs">Collection</p>
           <p className="mt-2 text-sm leading-relaxed">{collection.name}</p>
         </div>

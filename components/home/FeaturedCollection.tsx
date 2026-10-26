@@ -1,6 +1,6 @@
 import { editorialPhoto } from '@/lib/imagery';
 import { Collection } from '@/lib/types';
-import PlaceholderImage from '@/components/ui/PlaceholderImage';
+import CatalogImage from '@/components/ui/CatalogImage';
 import Button from '@/components/ui/Button';
 
 export default function FeaturedCollection({ collection }: { collection: Collection }) {
@@ -8,9 +8,15 @@ export default function FeaturedCollection({ collection }: { collection: Collect
     <section className="py-24 md:py-32">
       <div className="container-elvic grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div className="home-hover-card lookbook-interactive relative aspect-[4/5] w-full overflow-hidden bg-bone lg:order-2">
-          <PlaceholderImage className="lookbook-image" src={editorialPhoto(collection.slug)} label={collection.name} />
+          <CatalogImage
+            className="lookbook-image"
+            src={editorialPhoto(collection.slug)}
+            label={collection.name}
+          />
           <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-bone/85 to-transparent px-6 pb-8 pt-12 text-center sm:pb-10">
-            <p className="text-eyebrow text-[10px] font-medium text-graphite sm:text-xs">Featured Collection</p>
+            <p className="text-eyebrow text-[10px] font-medium text-graphite sm:text-xs">
+              Featured Collection
+            </p>
             <p className="mt-2 text-sm leading-relaxed text-ink">{collection.name}</p>
           </div>
         </div>

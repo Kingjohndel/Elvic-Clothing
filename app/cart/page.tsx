@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useCart } from '@/lib/context/CartContext';
 import { formatPrice } from '@/lib/utils';
-import PlaceholderImage from '@/components/ui/PlaceholderImage';
+import CatalogImage from '@/components/ui/CatalogImage';
 import Button from '@/components/ui/Button';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 
@@ -32,8 +32,15 @@ export default function CartPage() {
               const key = `${line.productId}-${line.size}-${line.color}`;
               return (
                 <li key={key} className="flex gap-3 py-6 sm:gap-5">
-                  <Link href={`/product/${line.slug}`} className="h-28 w-20 shrink-0 overflow-hidden bg-bone sm:h-40 sm:w-32">
-                    <PlaceholderImage productId={line.productId} color={line.color} label={`${line.name}: ${line.color}`} />
+                  <Link
+                    href={`/product/${line.slug}`}
+                    className="h-28 w-20 shrink-0 overflow-hidden bg-bone sm:h-40 sm:w-32"
+                  >
+                    <CatalogImage
+                      productId={line.productId}
+                      color={line.color}
+                      label={`${line.name}: ${line.color}`}
+                    />
                   </Link>
                   <div className="flex min-w-0 flex-1 flex-col">
                     <div className="flex flex-wrap items-start justify-between gap-3">
@@ -52,7 +59,9 @@ export default function CartPage() {
                       <div className="flex items-center border border-line">
                         <button
                           type="button"
-                          onClick={() => updateQuantity(line.productId, line.size, line.color, line.quantity - 1)}
+                          onClick={() =>
+                            updateQuantity(line.productId, line.size, line.color, line.quantity - 1)
+                          }
                           className="flex h-11 w-11 items-center justify-center text-sm"
                           aria-label={`Decrease quantity of ${line.name}`}
                         >
@@ -63,7 +72,9 @@ export default function CartPage() {
                         </span>
                         <button
                           type="button"
-                          onClick={() => updateQuantity(line.productId, line.size, line.color, line.quantity + 1)}
+                          onClick={() =>
+                            updateQuantity(line.productId, line.size, line.color, line.quantity + 1)
+                          }
                           className="flex h-11 w-11 items-center justify-center text-sm"
                           aria-label={`Increase quantity of ${line.name}`}
                         >

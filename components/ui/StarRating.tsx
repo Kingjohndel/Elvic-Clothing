@@ -21,7 +21,11 @@ export default function StarRating({
           const fill = Math.max(0, Math.min(1, rounded - i));
           return (
             <span key={i} className="relative inline-block h-3.5 w-3.5">
-              <svg viewBox="0 0 20 20" className="absolute inset-0 h-full w-full text-line" fill="currentColor">
+              <svg
+                viewBox="0 0 20 20"
+                className="absolute inset-0 h-full w-full text-line"
+                fill="currentColor"
+              >
                 <path d="M10 1.5l2.6 5.7 6.2.6-4.7 4.2 1.4 6.1L10 15l-5.5 3.1 1.4-6.1L1.2 7.8l6.2-.6L10 1.5z" />
               </svg>
               <span

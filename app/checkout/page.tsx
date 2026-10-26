@@ -25,7 +25,9 @@ export default function CheckoutPage() {
   if (lines.length === 0 && !submitted) {
     return (
       <div className="container-elvic py-24 text-center">
-        <p className="text-lg text-graphite">Your bag is empty. There&rsquo;s nothing to check out yet.</p>
+        <p className="text-lg text-graphite">
+          Your bag is empty. There&rsquo;s nothing to check out yet.
+        </p>
         <Button href="/shop" className="mt-6">
           Shop Collection
         </Button>
@@ -37,7 +39,9 @@ export default function CheckoutPage() {
     return (
       <div className="container-elvic py-24 text-center">
         <p className="text-eyebrow text-xs font-medium text-stone">Demo Checkout</p>
-        <h1 className="mt-4 font-display text-4xl text-ink">This was a preview, not a real order.</h1>
+        <h1 className="mt-4 font-display text-4xl text-ink">
+          This was a preview, not a real order.
+        </h1>
         <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-graphite">
           No payment was processed and no order was placed. Connect a real payment provider and
           order-management system before taking this checkout live.
@@ -51,7 +55,13 @@ export default function CheckoutPage() {
 
   return (
     <div className="container-elvic py-10 md:py-14">
-      <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Bag', href: '/cart' }, { label: 'Checkout' }]} />
+      <Breadcrumbs
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Bag', href: '/cart' },
+          { label: 'Checkout' },
+        ]}
+      />
       <h1 className="mt-6 font-display text-4xl text-ink">Checkout</h1>
       <p className="mt-3 max-w-lg text-sm text-graphite">
         This is a demonstration checkout flow. No payment will be processed and no order will be
@@ -63,7 +73,12 @@ export default function CheckoutPage() {
           <fieldset>
             <legend className="mb-4 font-display text-xl text-ink">Contact</legend>
             <div className="grid gap-4 sm:grid-cols-2">
-              <input required type="email" placeholder="Email address" className="input-field sm:col-span-2" />
+              <input
+                required
+                type="email"
+                placeholder="Email address"
+                className="input-field sm:col-span-2"
+              />
             </div>
           </fieldset>
 
@@ -72,10 +87,20 @@ export default function CheckoutPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <input required type="text" placeholder="First name" className="input-field" />
               <input required type="text" placeholder="Last name" className="input-field" />
-              <input required type="text" placeholder="Address" className="input-field sm:col-span-2" />
+              <input
+                required
+                type="text"
+                placeholder="Address"
+                className="input-field sm:col-span-2"
+              />
               <input required type="text" placeholder="City" className="input-field" />
               <input required type="text" placeholder="Postal code" className="input-field" />
-              <input required type="text" placeholder="Country" className="input-field sm:col-span-2" />
+              <input
+                required
+                type="text"
+                placeholder="Country"
+                className="input-field sm:col-span-2"
+              />
             </div>
           </fieldset>
 
@@ -85,7 +110,12 @@ export default function CheckoutPage() {
               Demo only: no payment processor is connected. Do not enter real card details.
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
-              <input type="text" placeholder="Card number" className="input-field sm:col-span-2" disabled />
+              <input
+                type="text"
+                placeholder="Card number"
+                className="input-field sm:col-span-2"
+                disabled
+              />
               <input type="text" placeholder="Expiry" className="input-field" disabled />
               <input type="text" placeholder="CVC" className="input-field" disabled />
             </div>
@@ -100,11 +130,16 @@ export default function CheckoutPage() {
           <h2 className="font-display text-xl text-ink">Order Summary</h2>
           <ul className="mt-5 space-y-3 text-sm text-graphite">
             {lines.map((line) => (
-              <li key={`${line.productId}-${line.size}-${line.color}`} className="flex items-start justify-between gap-3">
+              <li
+                key={`${line.productId}-${line.size}-${line.color}`}
+                className="flex items-start justify-between gap-3"
+              >
                 <span className="min-w-0">
                   {line.name} ({line.color}/{line.size}) &times; {line.quantity}
                 </span>
-                <span className="shrink-0 whitespace-nowrap text-ink">{formatPrice(line.price * line.quantity)}</span>
+                <span className="shrink-0 whitespace-nowrap text-ink">
+                  {formatPrice(line.price * line.quantity)}
+                </span>
               </li>
             ))}
           </ul>

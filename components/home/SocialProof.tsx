@@ -43,7 +43,8 @@ export default function SocialProof() {
                 &ldquo;{review.quote}&rdquo;
               </blockquote>
               <figcaption className="mt-6 text-xs text-stone">
-                <span className="font-medium text-ink">{review.author}</span> &middot; {review.location}
+                <span className="font-medium text-ink">{review.author}</span> &middot;{' '}
+                {review.location}
               </figcaption>
             </figure>
           ))}

@@ -21,11 +21,16 @@ export default function ProductGrid({
 
   return (
     <div className="product-grid-container">
-    <div className="product-grid grid gap-x-3 gap-y-8 sm:gap-x-6 sm:gap-y-10">
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} showRating={showRating} variant={variant} />
-      ))}
-    </div>
+      <div className="product-grid grid gap-x-3 gap-y-8 sm:gap-x-6 sm:gap-y-10">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            showRating={showRating}
+            variant={variant}
+          />
+        ))}
+      </div>
     </div>
   );
 }

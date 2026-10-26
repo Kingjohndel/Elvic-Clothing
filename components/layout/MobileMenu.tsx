@@ -34,7 +34,12 @@ export default function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) 
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 xl:hidden" role="dialog" aria-modal="true" aria-label="Menu">
+        <div
+          className="fixed inset-0 z-50 xl:hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu"
+        >
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -59,7 +64,13 @@ export default function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) 
                 aria-label="Close menu"
                 className="flex h-10 w-10 items-center justify-center"
               >
-                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                >
                   <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
                 </svg>
               </button>
@@ -69,16 +80,18 @@ export default function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) 
               <ul className="space-y-1">
                 {links.map((link) => (
                   <Fragment key={link.href}>
-                  {link.label === 'New Arrivals' && <CategoriesMenu mobile onNavigate={onClose} />}
-                  <li>
-                    <Link
-                      href={link.href}
-                      onClick={onClose}
-                      className="block py-3 font-display text-2xl text-ink"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
+                    {link.label === 'New Arrivals' && (
+                      <CategoriesMenu mobile onNavigate={onClose} />
+                    )}
+                    <li>
+                      <Link
+                        href={link.href}
+                        onClick={onClose}
+                        className="block py-3 font-display text-2xl text-ink"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
                   </Fragment>
                 ))}
               </ul>
@@ -88,7 +101,11 @@ export default function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) 
                 <ul className="space-y-3">
                   {CATEGORY_LINKS.map((link) => (
                     <li key={link.href}>
-                      <Link href={link.href} onClick={onClose} className="inline-flex min-h-11 items-center text-sm text-graphite hover:text-ink">
+                      <Link
+                        href={link.href}
+                        onClick={onClose}
+                        className="inline-flex min-h-11 items-center text-sm text-graphite hover:text-ink"
+                      >
                         {link.label}
                       </Link>
                     </li>
@@ -97,13 +114,25 @@ export default function MobileMenu({ isOpen, onClose, links }: MobileMenuProps) 
               </div>
 
               <div className="mt-8 flex flex-wrap items-center gap-4 border-t border-line pt-6">
-                <Link href="/account" onClick={onClose} className="text-xs text-eyebrow text-graphite hover:text-ink">
+                <Link
+                  href="/account"
+                  onClick={onClose}
+                  className="text-xs text-eyebrow text-graphite hover:text-ink"
+                >
                   Account
                 </Link>
-                <Link href="/wishlist" onClick={onClose} className="text-xs text-eyebrow text-graphite hover:text-ink">
+                <Link
+                  href="/wishlist"
+                  onClick={onClose}
+                  className="text-xs text-eyebrow text-graphite hover:text-ink"
+                >
                   Wishlist
                 </Link>
-                <Link href="/contact" onClick={onClose} className="text-xs text-eyebrow text-graphite hover:text-ink">
+                <Link
+                  href="/contact"
+                  onClick={onClose}
+                  className="text-xs text-eyebrow text-graphite hover:text-ink"
+                >
                   Contact
                 </Link>
               </div>

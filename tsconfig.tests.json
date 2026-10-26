@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmit": false,
+    "incremental": false,
+    "outDir": ".test-build",
+    "rootDir": ".",
+    "plugins": []
+  },
+  "include": [
+    "tests/**/*.test.ts",
+    "lib/catalog.ts",
+    "lib/search.ts",
+    "lib/storage.ts",
+    "lib/types.ts",
+    "lib/data/products.ts",
+    "lib/imagery.ts"
+  ],
+  "exclude": ["node_modules", ".next", ".test-build"]
+}

@@ -4,7 +4,8 @@ import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Size Guide',
-  description: 'Find your ELVIC CLOTHING size with our detailed sizing charts for apparel and accessories.',
+  description:
+    'Find your ELVIC CLOTHING size with our detailed sizing charts for apparel and accessories.',
   path: '/size-guide',
 });
 

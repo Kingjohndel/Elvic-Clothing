@@ -7,7 +7,8 @@ import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Collections',
-  description: 'Explore ELVIC CLOTHING’s seasonal collections, from foundational essentials to signature tailoring.',
+  description:
+    'Explore ELVIC CLOTHING’s seasonal collections, from foundational essentials to signature tailoring.',
   path: '/collections',
 });
 

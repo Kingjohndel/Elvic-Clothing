@@ -18,8 +18,8 @@ export default function ReturnsPage() {
         <section>
           <h2 className="mb-3 font-display text-xl text-ink">Return Window</h2>
           <p>
-            Items may be returned within 30 days of delivery, provided they are unworn, unwashed
-            and have all original tags attached.
+            Items may be returned within 30 days of delivery, provided they are unworn, unwashed and
+            have all original tags attached.
           </p>
         </section>
         <section>
@@ -52,8 +52,8 @@ export default function ReturnsPage() {
           <p>Items marked as final sale at checkout are not eligible for return or exchange.</p>
         </section>
         <p className="text-xs text-stone">
-          This page describes a demo returns policy. Confirm terms with your fulfillment and
-          payment providers before launch.
+          This page describes a demo returns policy. Confirm terms with your fulfillment and payment
+          providers before launch.
         </p>
       </div>
     </div>

@@ -25,7 +25,13 @@ interface BuildMetadataArgs {
   noIndex?: boolean;
 }
 
-export function buildMetadata({ title, description, path, image, noIndex }: BuildMetadataArgs): Metadata {
+export function buildMetadata({
+  title,
+  description,
+  path,
+  image,
+  noIndex,
+}: BuildMetadataArgs): Metadata {
   const url = `${siteConfig.url}${path}`;
   const ogImage = image ?? siteConfig.ogImage;
 
@@ -35,9 +41,7 @@ export function buildMetadata({ title, description, path, image, noIndex }: Buil
     alternates: {
       canonical: url,
     },
-    robots: noIndex
-      ? { index: false, follow: false }
-      : { index: true, follow: true },
+    robots: noIndex ? { index: false, follow: false } : { index: true, follow: true },
     openGraph: {
       title,
       description,

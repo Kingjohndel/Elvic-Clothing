@@ -1,17 +1,10 @@
 'use client';
 
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-  ReactNode,
-} from 'react';
+import { createContext, useCallback, useContext, useMemo, useState, ReactNode } from 'react';
 import { CartLine, Product } from '@/lib/types';
 
-const STORAGE_KEY = 'elvic-cart-v1';
+import { useStoredState } from '@/lib/hooks/useStoredState';
+import { CART_STORAGE_KEY, decodeCart, isPositiveQuantity } from '@/lib/storage';
 
 interface CartContextValue {
   lines: CartLine[];
@@ -33,42 +26,29 @@ function lineKey(productId: string, size: string, color: string) {
 }
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [lines, setLines] = useState<CartLine[]>([]);
+  const [lines, setLines] = useStoredState<CartLine[]>(CART_STORAGE_KEY, [], decodeCart);
   const [isOpen, setIsOpen] = useState(false);
-  const [hydrated, setHydrated] = useState(false);
-
-  useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem(STORAGE_KEY);
-      if (raw) setLines(JSON.parse(raw));
-    } catch {
-      // localStorage unavailable: cart simply starts empty for this session.
-    }
-    setHydrated(true);
-  }, []);
-
-  useEffect(() => {
-    if (!hydrated) return;
-    try {
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(lines));
-    } catch {
-      // ignore write failures (private browsing, storage full, etc.)
-    }
-  }, [lines, hydrated]);
 
   const openCart = useCallback(() => setIsOpen(true), []);
   const closeCart = useCallback(() => setIsOpen(false), []);
 
   const addItem = useCallback(
     (product: Product, size: string, color: string, quantity = 1) => {
+      if (
+        !isPositiveQuantity(quantity) ||
+        !product.sizes.includes(size) ||
+        !product.colors.some((option) => option.name === color)
+      )
+        return;
       setLines((prev) => {
         const key = lineKey(product.id, size, color);
         const existing = prev.find((l) => lineKey(l.productId, l.size, l.color) === key);
         if (existing) {
+          if (!isPositiveQuantity(existing.quantity + quantity)) return prev;
           return prev.map((l) =>
             lineKey(l.productId, l.size, l.color) === key
               ? { ...l, quantity: l.quantity + quantity }
-              : l
+              : l,
           );
         }
         return [
@@ -87,34 +67,35 @@ export function CartProvider({ children }: { children: ReactNode }) {
       });
       setIsOpen(true);
     },
-    []
+    [setLines],
   );
 
-  const removeItem = useCallback((productId: string, size: string, color: string) => {
-    const key = lineKey(productId, size, color);
-    setLines((prev) => prev.filter((l) => lineKey(l.productId, l.size, l.color) !== key));
-  }, []);
+  const removeItem = useCallback(
+    (productId: string, size: string, color: string) => {
+      const key = lineKey(productId, size, color);
+      setLines((prev) => prev.filter((l) => lineKey(l.productId, l.size, l.color) !== key));
+    },
+    [setLines],
+  );
 
   const updateQuantity = useCallback(
     (productId: string, size: string, color: string, quantity: number) => {
+      if (!Number.isSafeInteger(quantity)) return;
       const key = lineKey(productId, size, color);
       setLines((prev) =>
         quantity <= 0
           ? prev.filter((l) => lineKey(l.productId, l.size, l.color) !== key)
           : prev.map((l) =>
-              lineKey(l.productId, l.size, l.color) === key ? { ...l, quantity } : l
-            )
+              lineKey(l.productId, l.size, l.color) === key ? { ...l, quantity } : l,
+            ),
       );
     },
-    []
+    [setLines],
   );
 
-  const clearCart = useCallback(() => setLines([]), []);
+  const clearCart = useCallback(() => setLines([]), [setLines]);
 
-  const subtotal = useMemo(
-    () => lines.reduce((sum, l) => sum + l.price * l.quantity, 0),
-    [lines]
-  );
+  const subtotal = useMemo(() => lines.reduce((sum, l) => sum + l.price * l.quantity, 0), [lines]);
   const itemCount = useMemo(() => lines.reduce((sum, l) => sum + l.quantity, 0), [lines]);
 
   const value: CartContextValue = {

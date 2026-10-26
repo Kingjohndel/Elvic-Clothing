@@ -1,4 +1,128 @@
-import PlaceholderImage from '@/components/ui/PlaceholderImage';
+import CatalogImage from '@/components/ui/CatalogImage';
 import { editorialPhoto } from '@/lib/imagery';
 import Link from 'next/link';
-export default function BrandDirectory() { return (<section className="bg-bone py-24 md:py-32"><div className="container-elvic"><div className="max-w-2xl"><p className="text-eyebrow mb-4 text-xs font-medium text-stone">The Wider Edit</p><h2 className="font-display text-3xl leading-[1.1] text-ink sm:text-4xl md:text-5xl">Discover Your Brands</h2><p className="mt-5 text-base leading-relaxed text-graphite">Beyond the season&apos;s headline names, ELVIC&apos;s directory runs deeper: one destination for a wider range of fashion identities.</p></div><div className="mt-12 grid grid-cols-1 gap-4 lg:grid-cols-12"><Link className="home-hover-card lookbook-interactive group relative focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink col-span-1 block aspect-[4/5] overflow-hidden bg-ink lg:col-span-7 lg:aspect-auto" href="/brands/nike"><div className="absolute inset-0 h-full w-full lookbook-image"><PlaceholderImage src={editorialPhoto("nike")} label="Nike editorial" /></div><div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent"></div><div className="lookbook-caption absolute inset-x-0 bottom-0 p-8"><p className="text-eyebrow text-xs font-medium text-ivory/70">Sportswear</p><h3 className="mt-3 font-display text-4xl text-ivory sm:text-5xl">Nike</h3><p className="mt-3 max-w-sm text-sm leading-relaxed text-bone/85">Performance essentials, off the court too.</p><span className="link-underline text-eyebrow mt-5 inline-block text-xs font-medium text-ivory">Shop Nike →</span></div></Link><div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-5"><Link className="home-hover-card lookbook-interactive group relative focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink block min-w-0 w-full aspect-square min-h-[240px] overflow-hidden bg-bone sm:min-h-[260px]" href="/brands/adidas"><div className="relative h-full w-full lookbook-image"><PlaceholderImage src={editorialPhoto("adidas")} label="Adidas editorial" /></div><div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-transparent"></div><div className="lookbook-caption absolute inset-x-0 bottom-0 p-5"><p className="text-eyebrow text-[10px] font-medium text-ivory/70">Sportswear</p><h3 className="mt-2 font-display text-lg leading-tight text-ivory sm:text-xl">Adidas</h3><p className="mt-2 text-xs leading-relaxed text-bone/85">Three stripes, considered basics.</p><span className="link-underline text-eyebrow mt-3 inline-block text-[10px] font-medium text-ivory">Shop Adidas →</span></div></Link><Link className="home-hover-card lookbook-interactive group relative focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink block min-w-0 w-full aspect-square min-h-[240px] overflow-hidden bg-bone sm:min-h-[260px]" href="/brands/calvin-klein"><div className="relative h-full w-full lookbook-image"><PlaceholderImage src={editorialPhoto("calvin-klein")} label="Calvin Klein editorial" /></div><div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-transparent"></div><div className="lookbook-caption absolute inset-x-0 bottom-0 p-5"><p className="text-eyebrow text-[10px] font-medium text-ivory/70">Contemporary</p><h3 className="mt-2 font-display text-lg leading-tight text-ivory sm:text-xl">Calvin Klein</h3><p className="mt-2 text-xs leading-relaxed text-bone/85">Minimalism, done properly.</p><span className="link-underline text-eyebrow mt-3 inline-block text-[10px] font-medium text-ivory">Shop Calvin Klein →</span></div></Link><Link className="home-hover-card lookbook-interactive group relative focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink block min-w-0 w-full aspect-square min-h-[240px] overflow-hidden bg-bone sm:min-h-[260px]" href="/brands/ralph-lauren"><div className="relative h-full w-full lookbook-image"><PlaceholderImage src={editorialPhoto("ralph-lauren")} label="Ralph Lauren editorial" /></div><div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-transparent"></div><div className="lookbook-caption absolute inset-x-0 bottom-0 p-5"><p className="text-eyebrow text-[10px] font-medium text-ivory/70">Heritage</p><h3 className="mt-2 font-display text-lg leading-tight text-ivory sm:text-xl">Ralph Lauren</h3><p className="mt-2 text-xs leading-relaxed text-bone/85">Ivy-league tailoring, reworked.</p><span className="link-underline text-eyebrow mt-3 inline-block text-[10px] font-medium text-ivory">Shop Ralph Lauren →</span></div></Link><Link className="home-hover-card lookbook-interactive group relative focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink block min-w-0 w-full aspect-square min-h-[240px] overflow-hidden bg-bone sm:min-h-[260px]" href="/brands/hugo"><div className="relative h-full w-full lookbook-image"><PlaceholderImage src={editorialPhoto("hugo")} label="Hugo editorial" /></div><div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-transparent"></div><div className="lookbook-caption absolute inset-x-0 bottom-0 p-5"><p className="text-eyebrow text-[10px] font-medium text-ivory/70">Contemporary</p><h3 className="mt-2 font-display text-lg leading-tight text-ivory sm:text-xl">Hugo</h3><p className="mt-2 text-xs leading-relaxed text-bone/85">Sharp tailoring, modern proportions.</p><span className="link-underline text-eyebrow mt-3 inline-block text-[10px] font-medium text-ivory">Shop Hugo →</span></div></Link></div></div></div></section>); }
+export default function BrandDirectory() {
+  return (
+    <section className="bg-bone py-24 md:py-32">
+      <div className="container-elvic">
+        <div className="max-w-2xl">
+          <p className="text-eyebrow mb-4 text-xs font-medium text-stone">The Wider Edit</p>
+          <h2 className="font-display text-3xl leading-[1.1] text-ink sm:text-4xl md:text-5xl">
+            Discover Your Brands
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-graphite">
+            Beyond the season&apos;s headline names, ELVIC&apos;s directory runs deeper: one
+            destination for a wider range of fashion identities.
+          </p>
+        </div>
+        <div className="mt-12 grid grid-cols-1 gap-4 lg:grid-cols-12">
+          <Link
+            className="home-hover-card lookbook-interactive group relative focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink col-span-1 block aspect-[4/5] overflow-hidden bg-ink lg:col-span-7 lg:aspect-auto"
+            href="/brands/nike"
+          >
+            <div className="absolute inset-0 h-full w-full lookbook-image">
+              <CatalogImage src={editorialPhoto('nike')} label="Nike editorial" />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent"></div>
+            <div className="lookbook-caption absolute inset-x-0 bottom-0 p-8">
+              <p className="text-eyebrow text-xs font-medium text-ivory/70">Sportswear</p>
+              <h3 className="mt-3 font-display text-4xl text-ivory sm:text-5xl">Nike</h3>
+              <p className="mt-3 max-w-sm text-sm leading-relaxed text-bone/85">
+                Performance essentials, off the court too.
+              </p>
+              <span className="link-underline text-eyebrow mt-5 inline-block text-xs font-medium text-ivory">
+                Shop Nike →
+              </span>
+            </div>
+          </Link>
+          <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-5">
+            <Link
+              className="home-hover-card lookbook-interactive group relative focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink block min-w-0 w-full aspect-square min-h-[240px] overflow-hidden bg-bone sm:min-h-[260px]"
+              href="/brands/adidas"
+            >
+              <div className="relative h-full w-full lookbook-image">
+                <CatalogImage src={editorialPhoto('adidas')} label="Adidas editorial" />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-transparent"></div>
+              <div className="lookbook-caption absolute inset-x-0 bottom-0 p-5">
+                <p className="text-eyebrow text-[10px] font-medium text-ivory/70">Sportswear</p>
+                <h3 className="mt-2 font-display text-lg leading-tight text-ivory sm:text-xl">
+                  Adidas
+                </h3>
+                <p className="mt-2 text-xs leading-relaxed text-bone/85">
+                  Three stripes, considered basics.
+                </p>
+                <span className="link-underline text-eyebrow mt-3 inline-block text-[10px] font-medium text-ivory">
+                  Shop Adidas →
+                </span>
+              </div>
+            </Link>
+            <Link
+              className="home-hover-card lookbook-interactive group relative focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink block min-w-0 w-full aspect-square min-h-[240px] overflow-hidden bg-bone sm:min-h-[260px]"
+              href="/brands/calvin-klein"
+            >
+              <div className="relative h-full w-full lookbook-image">
+                <CatalogImage src={editorialPhoto('calvin-klein')} label="Calvin Klein editorial" />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-transparent"></div>
+              <div className="lookbook-caption absolute inset-x-0 bottom-0 p-5">
+                <p className="text-eyebrow text-[10px] font-medium text-ivory/70">Contemporary</p>
+                <h3 className="mt-2 font-display text-lg leading-tight text-ivory sm:text-xl">
+                  Calvin Klein
+                </h3>
+                <p className="mt-2 text-xs leading-relaxed text-bone/85">
+                  Minimalism, done properly.
+                </p>
+                <span className="link-underline text-eyebrow mt-3 inline-block text-[10px] font-medium text-ivory">
+                  Shop Calvin Klein →
+                </span>
+              </div>
+            </Link>
+            <Link
+              className="home-hover-card lookbook-interactive group relative focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink block min-w-0 w-full aspect-square min-h-[240px] overflow-hidden bg-bone sm:min-h-[260px]"
+              href="/brands/ralph-lauren"
+            >
+              <div className="relative h-full w-full lookbook-image">
+                <CatalogImage src={editorialPhoto('ralph-lauren')} label="Ralph Lauren editorial" />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-transparent"></div>
+              <div className="lookbook-caption absolute inset-x-0 bottom-0 p-5">
+                <p className="text-eyebrow text-[10px] font-medium text-ivory/70">Heritage</p>
+                <h3 className="mt-2 font-display text-lg leading-tight text-ivory sm:text-xl">
+                  Ralph Lauren
+                </h3>
+                <p className="mt-2 text-xs leading-relaxed text-bone/85">
+                  Ivy-league tailoring, reworked.
+                </p>
+                <span className="link-underline text-eyebrow mt-3 inline-block text-[10px] font-medium text-ivory">
+                  Shop Ralph Lauren →
+                </span>
+              </div>
+            </Link>
+            <Link
+              className="home-hover-card lookbook-interactive group relative focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink block min-w-0 w-full aspect-square min-h-[240px] overflow-hidden bg-bone sm:min-h-[260px]"
+              href="/brands/hugo"
+            >
+              <div className="relative h-full w-full lookbook-image">
+                <CatalogImage src={editorialPhoto('hugo')} label="Hugo editorial" />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/25 to-transparent"></div>
+              <div className="lookbook-caption absolute inset-x-0 bottom-0 p-5">
+                <p className="text-eyebrow text-[10px] font-medium text-ivory/70">Contemporary</p>
+                <h3 className="mt-2 font-display text-lg leading-tight text-ivory sm:text-xl">
+                  Hugo
+                </h3>
+                <p className="mt-2 text-xs leading-relaxed text-bone/85">
+                  Sharp tailoring, modern proportions.
+                </p>
+                <span className="link-underline text-eyebrow mt-3 inline-block text-[10px] font-medium text-ivory">
+                  Shop Hugo →
+                </span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

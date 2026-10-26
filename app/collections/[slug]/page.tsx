@@ -2,7 +2,7 @@ import { editorialPhoto } from '@/lib/imagery';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
-import PlaceholderImage from '@/components/ui/PlaceholderImage';
+import CatalogImage from '@/components/ui/CatalogImage';
 import ProductGrid from '@/components/product/ProductGrid';
 import { collections, getCollectionBySlug } from '@/lib/data/collections';
 import { getProductsByCollection } from '@/lib/data/products';
@@ -15,7 +15,12 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const collection = getCollectionBySlug(params.slug);
   if (!collection) {
-    return buildMetadata({ title: 'Collection Not Found', description: 'This collection could not be found.', path: `/collections/${params.slug}`, noIndex: true });
+    return buildMetadata({
+      title: 'Collection Not Found',
+      description: 'This collection could not be found.',
+      path: `/collections/${params.slug}`,
+      noIndex: true,
+    });
   }
   return buildMetadata({
     title: collection.name,
@@ -43,7 +48,7 @@ export default function CollectionPage({ params }: { params: { slug: string } })
 
       <section className="relative flex h-[50vh] min-h-[380px] items-end overflow-hidden bg-ink text-ivory">
         <div className="absolute inset-0">
-          <PlaceholderImage src={editorialPhoto(collection.slug)} monogram={false} />
+          <CatalogImage src={editorialPhoto(collection.slug)} />
           <div className="absolute inset-0 bg-ink/40" />
         </div>
         <div className="container-elvic relative z-10 pb-12">
@@ -54,9 +59,15 @@ export default function CollectionPage({ params }: { params: { slug: string } })
       </section>
 
       <div className="container-elvic py-16 md:py-20">
-        <p className="max-w-2xl text-base leading-relaxed text-graphite">{collection.description}</p>
+        <p className="max-w-2xl text-base leading-relaxed text-graphite">
+          {collection.description}
+        </p>
         <div className="mt-12">
-          <ProductGrid products={collectionProducts} showRating variant={collection.slug === 'signature-tailoring' ? 'catalog' : 'default'} />
+          <ProductGrid
+            products={collectionProducts}
+            showRating
+            variant={collection.slug === 'signature-tailoring' ? 'catalog' : 'default'}
+          />
         </div>
       </div>
     </div>

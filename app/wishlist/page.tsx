@@ -22,7 +22,9 @@ export default function WishlistPage() {
           <p className="max-w-sm text-sm leading-relaxed text-graphite">
             Save the pieces that catch your eye: they’ll live here until you’re ready.
           </p>
-          <Button href="/new-arrivals" className="mt-2">Shop New Arrivals</Button>
+          <Button href="/new-arrivals" className="mt-2">
+            Shop New Arrivals
+          </Button>
         </div>
       ) : (
         <div className="mt-12">

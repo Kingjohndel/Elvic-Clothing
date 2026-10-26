@@ -17,7 +17,10 @@ export default function ShippingPage() {
       <div className="mt-10 max-w-2xl space-y-10 text-sm leading-relaxed text-graphite">
         <section>
           <h2 className="mb-3 font-display text-xl text-ink">Processing Time</h2>
-          <p>Orders are typically processed within 1–2 business days before dispatch. You&rsquo;ll receive a confirmation once your order has shipped.</p>
+          <p>
+            Orders are typically processed within 1–2 business days before dispatch. You&rsquo;ll
+            receive a confirmation once your order has shipped.
+          </p>
         </section>
         <section>
           <h2 className="mb-3 font-display text-xl text-ink">Shipping Rates</h2>
@@ -41,8 +44,8 @@ export default function ShippingPage() {
           </p>
         </section>
         <p className="text-xs text-stone">
-          This page describes a demo shipping policy. Replace figures and timelines with your
-          actual carrier terms before launch.
+          This page describes a demo shipping policy. Replace figures and timelines with your actual
+          carrier terms before launch.
         </p>
       </div>
     </div>

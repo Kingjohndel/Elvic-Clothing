@@ -12,11 +12,7 @@
         "/images/product-views/p1-0-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     },
     {
       "color": "White",
@@ -30,11 +26,7 @@
         "/images/product-views/p1-1-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     }
   ],
   "p2": [
@@ -50,11 +42,7 @@
         "/images/product-views/p2-0-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     },
     {
       "color": "Green Stripe",
@@ -68,11 +56,7 @@
         "/images/product-views/p2-1-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     }
   ],
   "p3": [
@@ -88,11 +72,7 @@
         "/images/product-views/p3-0-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     }
   ],
   "p4": [
@@ -108,11 +88,7 @@
         "/images/product-views/p4-0-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     }
   ],
   "p5": [
@@ -128,11 +104,7 @@
         "/images/product-views/p5-0-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     }
   ],
   "p6": [
@@ -148,11 +120,7 @@
         "/images/product-views/p6-0-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     },
     {
       "color": "White",
@@ -166,11 +134,7 @@
         "/images/product-views/p6-1-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     }
   ],
   "p7": [
@@ -186,11 +150,7 @@
         "/images/product-views/p7-0-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     },
     {
       "color": "Black",
@@ -204,11 +164,7 @@
         "/images/product-views/p7-1-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     }
   ],
   "p8": [
@@ -224,11 +180,7 @@
         "/images/product-views/p8-0-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     }
   ],
   "p9": [
@@ -244,11 +196,7 @@
         "/images/product-views/p9-0-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     },
     {
       "color": "Chocolate",
@@ -262,11 +210,7 @@
         "/images/product-views/p9-1-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     }
   ],
   "p10": [
@@ -282,11 +226,7 @@
         "/images/product-views/p10-0-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     }
   ],
   "p11": [
@@ -302,11 +242,7 @@
         "/images/product-views/p11-0-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     }
   ],
   "p12": [
@@ -322,11 +258,7 @@
         "/images/product-views/p12-0-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     }
   ],
   "p13": [
@@ -342,11 +274,7 @@
         "/images/product-views/p13-0-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     }
   ],
   "p14": [
@@ -362,11 +290,7 @@
         "/images/product-views/p14-0-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     },
     {
       "color": "Washed Bone",
@@ -380,11 +304,7 @@
         "/images/product-views/p14-1-sheet.webp#side"
       ],
       "illustrative": true,
-      "views": [
-        "Front",
-        "Back",
-        "Side"
-      ]
+      "views": ["Front", "Back", "Side"]
     }
   ]
 }

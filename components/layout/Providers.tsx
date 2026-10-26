@@ -9,12 +9,12 @@ import CartDrawer from '@/components/layout/CartDrawer';
 export default function Providers({ children }: { children: ReactNode }) {
   return (
     <MotionConfig reducedMotion="user">
-    <CartProvider>
-      <WishlistProvider>
-        {children}
-        <CartDrawer />
-      </WishlistProvider>
-    </CartProvider>
+      <CartProvider>
+        <WishlistProvider>
+          {children}
+          <CartDrawer />
+        </WishlistProvider>
+      </CartProvider>
     </MotionConfig>
   );
 }

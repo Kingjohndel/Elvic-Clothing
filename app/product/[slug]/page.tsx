@@ -12,7 +12,13 @@ export function generateStaticParams() {
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const product = getProductBySlug(params.slug);
-  if (!product) return buildMetadata({ title: 'Product Not Found', description: 'This product could not be found.', path: `/product/${params.slug}`, noIndex: true });
+  if (!product)
+    return buildMetadata({
+      title: 'Product Not Found',
+      description: 'This product could not be found.',
+      path: `/product/${params.slug}`,
+      noIndex: true,
+    });
 
   return buildMetadata({
     title: product.name,

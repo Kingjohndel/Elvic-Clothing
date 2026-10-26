@@ -27,7 +27,9 @@ export default function HomePage() {
   const newArrivals = getNewArrivals();
   const bestSellers = getBestSellers();
   const topPicks = getTopPicks();
-  const saleProducts = products.filter(product => product.compareAtPrice !== undefined && product.compareAtPrice > product.price);
+  const saleProducts = products.filter(
+    (product) => product.compareAtPrice !== undefined && product.compareAtPrice > product.price,
+  );
   const featuredCollection = getCollectionBySlug('signature-tailoring')!;
 
   return (
@@ -38,10 +40,34 @@ export default function HomePage() {
         <div className="container-elvic">
           <p className="text-eyebrow mb-6 text-xs font-medium text-stone">Just In</p>
           <div className="space-y-12 md:space-y-14">
-            <ProductRow id="new-arrivals-row" title="New Arrivals" description="The latest pieces added to ELVIC: sourced in small, considered drops across brands." products={newArrivals} href="/new-arrivals" />
-            <ProductRow id="sale-row" title="Sale / Limited-Time Offers" description="Explore the current markdowns across the ELVIC edit." products={saleProducts} href="/sale" />
-            <ProductRow id="top-picks-row" title="Top Picks" description="A considered selection of standout pieces from across our brands." products={topPicks} href="/shop?edit=top-picks" />
-            <ProductRow id="best-sellers-row" title="Best Sellers" description="The pieces the Elvic community keeps coming back for." products={bestSellers} href="/shop?sort=best-selling" />
+            <ProductRow
+              id="new-arrivals-row"
+              title="New Arrivals"
+              description="The latest pieces added to ELVIC: sourced in small, considered drops across brands."
+              products={newArrivals}
+              href="/new-arrivals"
+            />
+            <ProductRow
+              id="sale-row"
+              title="Sale / Limited-Time Offers"
+              description="Explore the current markdowns across the ELVIC edit."
+              products={saleProducts}
+              href="/sale"
+            />
+            <ProductRow
+              id="top-picks-row"
+              title="Top Picks"
+              description="A considered selection of standout pieces from across our brands."
+              products={topPicks}
+              href="/shop?edit=top-picks"
+            />
+            <ProductRow
+              id="best-sellers-row"
+              title="Best Sellers"
+              description="The pieces the Elvic community keeps coming back for."
+              products={bestSellers}
+              href="/shop?sort=best-selling"
+            />
             <TopBrandsRow />
           </div>
         </div>
@@ -66,7 +92,6 @@ export default function HomePage() {
       <TrustSection />
 
       <SocialProof />
-
     </>
   );
 }

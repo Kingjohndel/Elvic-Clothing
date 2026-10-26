@@ -1,3 +1,5 @@
+@import './styles/motion.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -102,59 +104,6 @@ textarea:focus-visible,
   transform-origin: left;
 }
 
-/* CSS entrances keep hero copy independent of client-side hydration. */
-@keyframes elvic-intro { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-.hero-enter { animation: elvic-intro 650ms cubic-bezier(0.22, 1, 0.36, 1) both; }
-.hero-enter-title { animation-delay: 80ms; }
-.hero-enter-description { animation-delay: 160ms; }
-.hero-enter-actions { animation-delay: 240ms; }
-
-/* One clipped layer owns the fill and its matching label colour. */
-.hero-cta {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  border: 1px solid #f6f3ee;
-  transition: border-color 250ms ease;
-}
-.hero-cta-dark { background: #f6f3ee; color: #111110; --cta-fill: #111110; --cta-label: #f6f3ee; }
-.hero-cta-light { background: transparent; color: #f6f3ee; --cta-fill: #f6f3ee; --cta-label: #111110; }
-.hero-cta-reveal {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: inherit;
-  background: var(--cta-fill);
-  color: var(--cta-label);
-  pointer-events: none;
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 450ms cubic-bezier(0.65, 0, 0.35, 1);
-}
-.hero-cta:is(:hover, :focus-visible, :active) .hero-cta-reveal { clip-path: inset(0); }
-.hero-cta:focus-visible { outline-color: #f6f3ee; outline-offset: 5px; }
-@media (hover: none), (pointer: coarse) {
-  .hero-cta-reveal { transition-duration: 140ms; }
-}
-
-/* Product image previews are optional on mouse hover, never required on touch. */
-.product-card-image { transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1); }
-.product-card-alternate { transition: opacity 350ms ease; }
-@media (hover: hover) and (pointer: fine) {
-  .product-card-image:hover { transform: scale(1.03); }
-  .product-card-image:hover .product-card-alternate { opacity: 1; }
-}
-.product-card-image:focus-visible .product-card-alternate { opacity: 1; }
-@keyframes product-view-in { from { opacity: 0; } to { opacity: 1; } }
-.product-view-frame { animation: product-view-in 180ms ease-out; }
-@media (prefers-reduced-motion: reduce) {
-  .hero-cta, .hero-cta-reveal, .product-card-image, .product-card-alternate { transition: none; }
-  .product-card-image:hover { transform: none; }
-  .product-view-frame { animation: none; }
-}
-
 /* Hide scrollbar for horizontally-scrolling strips while keeping them scrollable */
 .no-scrollbar {
   -ms-overflow-style: none;
@@ -186,159 +135,51 @@ textarea:focus-visible,
   min-width: 0;
   container: products / inline-size;
 }
-.product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.product-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 @container products (min-width: 660px) {
-  .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 @container products (min-width: 900px) {
-  .product-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .product-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 /* Touch devices need a visible quick-add action without hovering. */
 @media (hover: none), (pointer: coarse) {
-  .product-quick-add { transform: translateY(0); opacity: 1; }
+  .product-quick-add {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Keep text fields readable and avoid automatic zoom on small-screen browsers. */
 @media (max-width: 767px) {
-  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
-  select, textarea { font-size: 16px; }
+  input:not([type='checkbox']):not([type='radio']):not([type='range']),
+  select,
+  textarea {
+    font-size: 16px;
+  }
 }
 
-main, section, article { min-width: 0; }
-h1, h2, h3, p { overflow-wrap: break-word; }
+main,
+section,
+article {
+  min-width: 0;
+}
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: break-word;
+}
 @media (hover: none), (pointer: coarse) {
-  .category-cta { max-height: 2rem; opacity: 1; }
-}
-
-
-/* Shared lookbook interactions retain the existing link and card dimensions. */
-.lookbook-image {
-  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1), filter 450ms ease;
-}
-.lookbook-caption, .lookbook-preview-caption {
-  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1), opacity 350ms ease;
-}
-.lookbook-preview-caption { opacity: 0; }
-@media (hover: hover) and (pointer: fine) {
-  .lookbook-interactive:hover .lookbook-image { transform: scale(1.045); filter: brightness(0.94); }
-  .lookbook-interactive:hover .lookbook-caption { transform: none; }
-  .lookbook-interactive:hover .lookbook-preview-caption { opacity: 1; transform: translateY(0); }
-}
-.lookbook-interactive:focus-visible .lookbook-image { transform: scale(1.045); filter: brightness(0.94); }
-.lookbook-interactive:focus-visible .lookbook-caption { transform: none; }
-.lookbook-interactive:focus-visible .lookbook-preview-caption { opacity: 1; transform: translateY(0); }
-.lookbook-interactive:active .lookbook-image { transform: scale(1.02); filter: brightness(0.88); }
-@media (hover: none), (pointer: coarse) {
-  .lookbook-preview-caption { opacity: 1; transform: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .lookbook-image, .lookbook-caption, .lookbook-preview-caption { transition: none; }
-  .lookbook-interactive:is(:hover, :focus-visible, :active) .lookbook-image,
-  .lookbook-interactive:is(:hover, :focus-visible) .lookbook-caption,
-  .lookbook-preview-caption { transform: none; }
-}
-
-
-/* Lift the whole lookbook card while its image keeps the existing zoom. */
-.lookbook-interactive {
-  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 500ms ease;
-}
-@media (hover: hover) and (pointer: fine) {
-  .lookbook-interactive:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 32px -16px rgb(17 17 16 / 35%);
+  .category-cta {
+    max-height: 2rem;
+    opacity: 1;
   }
-}
-.lookbook-interactive:focus-visible {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 32px -16px rgb(17 17 16 / 35%);
-}
-.lookbook-interactive:active { transform: translateY(-2px); }
-@media (prefers-reduced-motion: reduce) {
-  .lookbook-interactive { transition: none; }
-  .lookbook-interactive:is(:hover, :focus-visible, :active) { transform: none; }
-}
-
-
-/* Brands lift as complete panels; image zoom stays inside the panel. */
-.brand-card, .brand-featured-card {
-  position: relative;
-  top: 0;
-  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 450ms ease;
-}
-.brand-card .brand-card-image:is(:hover, :focus-visible, :active) {
-  transform: none;
-  box-shadow: none;
-}
-.brand-shop-link::after { transform-origin: left; }
-.brand-shop-arrow { position: relative; left: 0; transition: left 350ms ease; }
-@media (hover: hover) and (pointer: fine) {
-  .brand-card:has(.brand-card-image:hover),
-  .brand-featured-card:has(.brand-card-image:hover) {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 32px -16px rgb(17 17 16 / 25%);
-  }
-  .brand-card:has(.brand-card-image:hover) .brand-shop-link::after {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-  .brand-card:has(.brand-card-image:hover) .brand-shop-arrow,
-  .brand-shop-link:hover .brand-shop-arrow { left: 4px; }
-}
-.brand-card:focus-within, .brand-featured-card:focus-within {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 32px -16px rgb(17 17 16 / 25%);
-}
-.brand-card:focus-within .brand-shop-link::after { transform: scaleX(1); transform-origin: left; }
-.brand-card:focus-within .brand-shop-arrow { left: 4px; }
-/* A featured panel owns the lift, so its inner article moves with it once. */
-.brand-featured-card .brand-card:is(:hover, :focus-within),
-.brand-featured-card .brand-card:has(.brand-card-image:hover) { top: 0; transform: none; box-shadow: none; }
-@media (prefers-reduced-motion: reduce) {
-  .brand-card, .brand-featured-card, .brand-shop-arrow, .brand-shop-link::after { transition: none; }
-  .brand-card:is(:hover, :focus-within),
-  .brand-featured-card:is(:hover, :focus-within),
-  .brand-card:has(.brand-card-image:hover),
-  .brand-featured-card:has(.brand-card-image:hover),
-  .brand-card:is(:hover, :focus-within) .brand-shop-arrow,
-  .brand-card:has(.brand-card-image:hover) .brand-shop-arrow { top: 0; left: 0; transform: none; }
-}
-
-
-.brand-card .brand-card-image .lookbook-caption { transform: none; transition: none; }
-.brand-shop-link { display: inline-flex; align-items: baseline; gap: 0.5rem; max-width: 100%; padding-bottom: 3px; }
-.brand-shop-link::after { bottom: 0; }
-.brand-shop-link > span:first-child { min-width: 0; overflow-wrap: anywhere; }
-.brand-shop-arrow { flex-shrink: 0; letter-spacing: normal; }
-
-/* Homepage editorial images pan slightly right; their links sweep left to right. */
-.home-hover-card .link-underline::after { transform-origin: left; }
-.home-hover-card .category-cta::after { bottom: 0; }
-#top-brands-row { padding-top: 12px; margin-top: 12px; padding-bottom: 20px; }
-@media (hover: hover) and (pointer: fine) {
-  .home-hover-card:hover .lookbook-image { transform: scale(1.04) translateX(0.4%); }
-  .home-hover-card:hover .link-underline::after { transform: scaleX(1); transform-origin: left; }
-}
-.home-hover-card:focus-visible .lookbook-image { transform: scale(1.04) translateX(0.4%); }
-.home-hover-card:focus-visible .link-underline::after { transform: scaleX(1); transform-origin: left; }
-@media (prefers-reduced-motion: reduce) {
-  .home-hover-card:is(:hover, :focus-visible, :active) .lookbook-image { transform: none; }
-  .home-hover-card .link-underline::after, .home-hover-card .category-cta { transition: none; }
-}
-
-
-/* Collection captions stay outside the zoom layer; the full card lifts together. */
-.collection-card {
-  position: relative;
-  top: 0;
-  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 450ms ease;
-}
-@media (hover: hover) and (pointer: fine) {
-  .collection-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgb(17 17 16 / 25%); }
-}
-.collection-card:focus-visible { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgb(17 17 16 / 25%); }
-@media (prefers-reduced-motion: reduce) {
-  .collection-card { transition: none; }
-  .collection-card:is(:hover, :focus-visible) { transform: none; }
 }

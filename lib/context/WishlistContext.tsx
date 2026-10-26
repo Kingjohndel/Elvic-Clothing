@@ -1,15 +1,9 @@
 'use client';
 
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-  ReactNode,
-} from 'react';
+import { createContext, useCallback, useContext, ReactNode } from 'react';
 
-const STORAGE_KEY = 'elvic-wishlist-v1';
+import { useStoredState } from '@/lib/hooks/useStoredState';
+import { WISHLIST_STORAGE_KEY, decodeWishlist } from '@/lib/storage';
 
 interface WishlistContextValue {
   ids: string[];
@@ -20,33 +14,16 @@ interface WishlistContextValue {
 const WishlistContext = createContext<WishlistContextValue | undefined>(undefined);
 
 export function WishlistProvider({ children }: { children: ReactNode }) {
-  const [ids, setIds] = useState<string[]>([]);
-  const [hydrated, setHydrated] = useState(false);
+  const [ids, setIds] = useStoredState<string[]>(WISHLIST_STORAGE_KEY, [], decodeWishlist);
 
-  useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem(STORAGE_KEY);
-      if (raw) setIds(JSON.parse(raw));
-    } catch {
-      // ignore: wishlist starts empty
-    }
-    setHydrated(true);
-  }, []);
-
-  useEffect(() => {
-    if (!hydrated) return;
-    try {
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
-    } catch {
-      // ignore write failures
-    }
-  }, [ids, hydrated]);
-
-  const toggle = useCallback((productId: string) => {
-    setIds((prev) =>
-      prev.includes(productId) ? prev.filter((id) => id !== productId) : [...prev, productId]
-    );
-  }, []);
+  const toggle = useCallback(
+    (productId: string) => {
+      setIds((prev) =>
+        prev.includes(productId) ? prev.filter((id) => id !== productId) : [...prev, productId],
+      );
+    },
+    [setIds],
+  );
 
   const has = useCallback((productId: string) => ids.includes(productId), [ids]);
 

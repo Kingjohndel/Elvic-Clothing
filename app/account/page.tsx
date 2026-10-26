@@ -12,7 +12,7 @@ export default function AccountPage() {
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setMessage(
-      'Account functionality requires a connected backend. This form is a UI preview only: no account was created or signed in.'
+      'Account functionality requires a connected backend. This form is a UI preview only: no account was created or signed in.',
     );
   }
 
@@ -32,7 +32,7 @@ export default function AccountPage() {
               }}
               className={cn(
                 'flex-1 pb-3 text-xs font-medium uppercase tracking-widest2 transition-colors',
-                mode === m ? 'border-b border-ink text-ink' : 'text-stone hover:text-ink'
+                mode === m ? 'border-b border-ink text-ink' : 'text-stone hover:text-ink',
               )}
             >
               {m === 'sign-in' ? 'Sign In' : 'Create Account'}

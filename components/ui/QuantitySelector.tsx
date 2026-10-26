@@ -28,7 +28,10 @@ export default function QuantitySelector({
       >
         &minus;
       </button>
-      <span className="flex h-11 w-10 items-center justify-center text-sm tabular-nums" aria-live="polite">
+      <span
+        className="flex h-11 w-10 items-center justify-center text-sm tabular-nums"
+        aria-live="polite"
+      >
         {value}
       </span>
       <button

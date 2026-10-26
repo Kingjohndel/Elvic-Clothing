@@ -1,22 +1,42 @@
 [
- ["p1",0,"Black","plain black heavyweight cotton crewneck T-shirt"],
- ["p1",1,"White","plain bright white heavyweight cotton crewneck T-shirt"],
- ["p2",0,"Blue","light blue fine striped cotton poplin long-sleeved button-down shirt"],
- ["p2",1,"Green Stripe","sage green and white fine striped cotton poplin long-sleeved button-down shirt"],
- ["p3",0,"Black","plain black oversized cotton hoodie with kangaroo pocket and drawstring hood"],
- ["p4",0,"Black","black tailored wide-leg trousers with pressed creases"],
- ["p5",0,"Black","black women's structured tailored blazer with notch lapels and fitted waist"],
- ["p6",0,"Black","plain black cotton loopback crewneck sweatshirt"],
- ["p6",1,"White","plain ivory white cotton loopback crewneck sweatshirt"],
- ["p7",0,"Parachute Beige","parachute beige casual cotton utility shorts with elastic waist and side pockets"],
- ["p7",1,"Black","black casual cotton utility shorts with elastic waist and side pockets"],
- ["p8",0,"Black","plain black cotton six-panel baseball cap with curved brim"],
- ["p9",0,"Black","black women's pleated high-waisted wide-leg tailored trousers"],
- ["p9",1,"Chocolate","chocolate brown women's pleated high-waisted wide-leg tailored trousers"],
- ["p10",0,"Black Merle","dark charcoal black merle textured knit short-sleeved open collar polo shirt"],
- ["p11",0,"Black","black satin slip midi dress with delicate thin shoulder straps"],
- ["p12",0,"Beige","plain natural beige cotton canvas tote bag with two long shoulder handles"],
- ["p13",0,"Black / Olive Strata","black and muted olive ribbed knit beanie with folded cuff"],
- ["p14",0,"Harbour Blue","harbour blue relaxed straight leg denim jeans"],
- ["p14",1,"Washed Bone","washed bone ivory relaxed straight leg denim jeans"]
+  ["p1", 0, "Black", "plain black heavyweight cotton crewneck T-shirt"],
+  ["p1", 1, "White", "plain bright white heavyweight cotton crewneck T-shirt"],
+  ["p2", 0, "Blue", "light blue fine striped cotton poplin long-sleeved button-down shirt"],
+  [
+    "p2",
+    1,
+    "Green Stripe",
+    "sage green and white fine striped cotton poplin long-sleeved button-down shirt"
+  ],
+  [
+    "p3",
+    0,
+    "Black",
+    "plain black oversized cotton hoodie with kangaroo pocket and drawstring hood"
+  ],
+  ["p4", 0, "Black", "black tailored wide-leg trousers with pressed creases"],
+  ["p5", 0, "Black", "black women's structured tailored blazer with notch lapels and fitted waist"],
+  ["p6", 0, "Black", "plain black cotton loopback crewneck sweatshirt"],
+  ["p6", 1, "White", "plain ivory white cotton loopback crewneck sweatshirt"],
+  [
+    "p7",
+    0,
+    "Parachute Beige",
+    "parachute beige casual cotton utility shorts with elastic waist and side pockets"
+  ],
+  ["p7", 1, "Black", "black casual cotton utility shorts with elastic waist and side pockets"],
+  ["p8", 0, "Black", "plain black cotton six-panel baseball cap with curved brim"],
+  ["p9", 0, "Black", "black women's pleated high-waisted wide-leg tailored trousers"],
+  ["p9", 1, "Chocolate", "chocolate brown women's pleated high-waisted wide-leg tailored trousers"],
+  [
+    "p10",
+    0,
+    "Black Merle",
+    "dark charcoal black merle textured knit short-sleeved open collar polo shirt"
+  ],
+  ["p11", 0, "Black", "black satin slip midi dress with delicate thin shoulder straps"],
+  ["p12", 0, "Beige", "plain natural beige cotton canvas tote bag with two long shoulder handles"],
+  ["p13", 0, "Black / Olive Strata", "black and muted olive ribbed knit beanie with folded cuff"],
+  ["p14", 0, "Harbour Blue", "harbour blue relaxed straight leg denim jeans"],
+  ["p14", 1, "Washed Bone", "washed bone ivory relaxed straight leg denim jeans"]
 ]

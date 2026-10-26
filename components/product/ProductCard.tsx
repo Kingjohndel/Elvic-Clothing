@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Product } from '@/lib/types';
 import { formatPrice, cn } from '@/lib/utils';
 import { useCart } from '@/lib/context/CartContext';
-import PlaceholderImage from '@/components/ui/PlaceholderImage';
+import CatalogImage from '@/components/ui/CatalogImage';
 import WishlistButton from '@/components/product/WishlistButton';
 import StarRating from '@/components/ui/StarRating';
 
@@ -19,7 +19,7 @@ export default function ProductCard({
   variant?: 'default' | 'catalog';
 }) {
   const { addItem } = useCart();
-  const [selectedColor, setSelectedColor] = useState(product.colors[0]?.name ?? "");
+  const [selectedColor, setSelectedColor] = useState(product.colors[0]?.name ?? '');
   const [quickAddOpen, setQuickAddOpen] = useState(false);
 
   return (
@@ -29,12 +29,28 @@ export default function ProductCard({
           href={`/product/${product.slug}`}
           className="product-card-image relative block h-full w-full"
         >
-          <PlaceholderImage productId={product.id} color={selectedColor} label={`${product.brandName} ${product.name}: ${selectedColor}`} />
-          <PlaceholderImage productId={product.id} color={selectedColor} view={1} label={`${product.brandName} ${product.name}: alternate view`} className="product-card-alternate absolute inset-0 opacity-0" />
+          <CatalogImage
+            productId={product.id}
+            color={selectedColor}
+            label={`${product.brandName} ${product.name}: ${selectedColor}`}
+          />
+          <CatalogImage
+            productId={product.id}
+            color={selectedColor}
+            view={1}
+            label={`${product.brandName} ${product.name}: alternate view`}
+            className="product-card-alternate absolute inset-0 opacity-0"
+          />
         </Link>
 
         <div className="absolute right-3 top-3">
-          <WishlistButton productId={product.id} productName={variant === 'catalog' ? `${product.brandName} ${product.name}` : product.name} size="sm" />
+          <WishlistButton
+            productId={product.id}
+            productName={
+              variant === 'catalog' ? `${product.brandName} ${product.name}` : product.name
+            }
+            size="sm"
+          />
         </div>
 
         {(product.isNew || product.compareAtPrice) && (
@@ -57,7 +73,7 @@ export default function ProductCard({
           className={cn(
             'product-quick-add absolute inset-x-0 bottom-0 bg-ivory/95 backdrop-blur-sm transition-all duration-300 ease-editorial',
             'translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100',
-            quickAddOpen && 'translate-y-0 opacity-100'
+            quickAddOpen && 'translate-y-0 opacity-100',
           )}
         >
           {!quickAddOpen ? (
@@ -89,24 +105,66 @@ export default function ProductCard({
       </div>
 
       <div className="mt-4 flex flex-1 flex-col">
-        <Link href={`/brands/${product.brand}`} className={variant === 'catalog' ? 'link-underline text-eyebrow max-w-full w-fit break-words text-[10px] sm:text-[11px] font-medium text-stone hover:text-ink' : 'text-eyebrow mb-1 w-fit text-[10px] font-medium text-stone hover:text-ink'}>{product.brandName}</Link>
-        <Link href={`/product/${product.slug}`} className={cn('link-underline w-fit', variant === 'catalog' && 'mt-1')}>
+        <Link
+          href={`/brands/${product.brand}`}
+          className={
+            variant === 'catalog'
+              ? 'link-underline text-eyebrow max-w-full w-fit break-words text-[10px] sm:text-[11px] font-medium text-stone hover:text-ink'
+              : 'text-eyebrow mb-1 w-fit text-[10px] font-medium text-stone hover:text-ink'
+          }
+        >
+          {product.brandName}
+        </Link>
+        <Link
+          href={`/product/${product.slug}`}
+          className={cn('link-underline w-fit', variant === 'catalog' && 'mt-1')}
+        >
           <h3 className="font-display text-base text-ink">{product.name}</h3>
         </Link>
         <p className="mt-1 text-[10px] tracking-wide text-stone">Illustrative preview</p>
         <p className="mt-1 text-xs text-stone">
           {product.colors.length} colour{product.colors.length !== 1 ? 's' : ''}
         </p>
-        <div className="mt-2 flex flex-wrap gap-2" role="group" aria-label={`Colours for ${product.name}`}>
-          {product.colors.map((color) => <button key={color.name} type="button" onClick={() => setSelectedColor(color.name)} aria-label={`${product.name}: ${color.name}`} aria-pressed={selectedColor === color.name} title={color.name} className={cn('flex h-8 w-8 items-center justify-center rounded-full border transition-colors', selectedColor === color.name ? 'border-ink' : 'border-transparent hover:border-stone')}><span className="h-4 w-4 rounded-full border border-black/15" style={{backgroundColor: color.hex}} /></button>)}
+        <div
+          className="mt-2 flex flex-wrap gap-2"
+          role="group"
+          aria-label={`Colours for ${product.name}`}
+        >
+          {product.colors.map((color) => (
+            <button
+              key={color.name}
+              type="button"
+              onClick={() => setSelectedColor(color.name)}
+              aria-label={`${product.name}: ${color.name}`}
+              aria-pressed={selectedColor === color.name}
+              title={color.name}
+              className={cn(
+                'flex h-8 w-8 items-center justify-center rounded-full border transition-colors',
+                selectedColor === color.name
+                  ? 'border-ink'
+                  : 'border-transparent hover:border-stone',
+              )}
+            >
+              <span
+                className="h-4 w-4 rounded-full border border-black/15"
+                style={{ backgroundColor: color.hex }}
+              />
+            </button>
+          ))}
         </div>
         {showRating && product.reviewCount > 0 && (
-          <StarRating rating={product.rating} reviewCount={product.reviewCount} className="mt-1.5" />
+          <StarRating
+            rating={product.rating}
+            reviewCount={product.reviewCount}
+            className="mt-1.5"
+          />
         )}
         <div className="mt-2 flex flex-wrap items-center gap-2">
           <span className="text-sm text-ink">{formatPrice(product.price)}</span>
           {product.compareAtPrice && (
-            <span className="text-sm text-stone line-through">{formatPrice(product.compareAtPrice)}</span>
+            <span className="text-sm text-stone line-through">
+              {formatPrice(product.compareAtPrice)}
+            </span>
           )}
         </div>
       </div>

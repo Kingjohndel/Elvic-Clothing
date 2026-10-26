@@ -13,12 +13,14 @@ export default function TermsPage() {
     <div className="container-elvic py-10 md:py-14">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Terms of Service' }]} />
       <h1 className="mt-6 font-display text-4xl text-ink sm:text-5xl">Terms of Service</h1>
-      <p className="mt-3 text-xs text-stone">Last updated: placeholder: set this when the terms are finalized.</p>
+      <p className="mt-3 text-xs text-stone">
+        Last updated: placeholder: set this when the terms are finalized.
+      </p>
 
       <div className="mt-10 max-w-2xl space-y-8 text-sm leading-relaxed text-graphite">
         <p className="border border-line bg-bone p-4 text-xs text-graphite">
-          This is a template terms document for a demo storefront. It is not legal advice. Have
-          this reviewed by qualified counsel before publishing it for a live business.
+          This is a template terms document for a demo storefront. It is not legal advice. Have this
+          reviewed by qualified counsel before publishing it for a live business.
         </p>
         <section>
           <h2 className="mb-3 font-display text-xl text-ink">Use of Site</h2>
@@ -38,8 +40,8 @@ export default function TermsPage() {
           <h2 className="mb-3 font-display text-xl text-ink">Orders</h2>
           <p>
             This demo storefront does not process real payments or fulfil real orders. A live
-            deployment must connect a payment processor and order-management system before
-            accepting orders.
+            deployment must connect a payment processor and order-management system before accepting
+            orders.
           </p>
         </section>
         <section>

@@ -4,7 +4,8 @@ import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
   title: 'FAQ',
-  description: 'Answers to common questions about ordering, sizing, shipping and returns at ELVIC CLOTHING.',
+  description:
+    'Answers to common questions about ordering, sizing, shipping and returns at ELVIC CLOTHING.',
   path: '/faq',
 });
 
@@ -48,16 +49,24 @@ const faqJsonLd = {
 export default function FaqPage() {
   return (
     <div className="container-elvic py-10 md:py-14">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'FAQ' }]} />
-      <h1 className="mt-6 font-display text-4xl text-ink sm:text-5xl">Frequently Asked Questions</h1>
+      <h1 className="mt-6 font-display text-4xl text-ink sm:text-5xl">
+        Frequently Asked Questions
+      </h1>
 
       <div className="mt-12 max-w-2xl divide-y divide-line border-y border-line">
         {FAQS.map((item) => (
           <details key={item.q} className="group py-5">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-lg text-ink">
               {item.q}
-              <span className="shrink-0 text-xl text-stone transition-transform group-open:rotate-45" aria-hidden="true">
+              <span
+                className="shrink-0 text-xl text-stone transition-transform group-open:rotate-45"
+                aria-hidden="true"
+              >
                 +
               </span>
             </summary>

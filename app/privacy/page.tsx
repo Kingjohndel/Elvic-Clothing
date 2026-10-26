@@ -13,12 +13,14 @@ export default function PrivacyPage() {
     <div className="container-elvic py-10 md:py-14">
       <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Privacy Policy' }]} />
       <h1 className="mt-6 font-display text-4xl text-ink sm:text-5xl">Privacy Policy</h1>
-      <p className="mt-3 text-xs text-stone">Last updated: placeholder: set this when the policy is finalized.</p>
+      <p className="mt-3 text-xs text-stone">
+        Last updated: placeholder: set this when the policy is finalized.
+      </p>
 
       <div className="mt-10 max-w-2xl space-y-8 text-sm leading-relaxed text-graphite">
         <p className="border border-line bg-bone p-4 text-xs text-graphite">
-          This is a template privacy policy for a demo storefront. It is not legal advice. Have
-          this reviewed by qualified counsel before publishing it for a live business.
+          This is a template privacy policy for a demo storefront. It is not legal advice. Have this
+          reviewed by qualified counsel before publishing it for a live business.
         </p>
         <section>
           <h2 className="mb-3 font-display text-xl text-ink">Information We Collect</h2>
@@ -32,8 +34,8 @@ export default function PrivacyPage() {
           <h2 className="mb-3 font-display text-xl text-ink">How We Use Information</h2>
           <p>
             We use the information we collect to process orders, respond to inquiries, improve our
-            products and site experience, and, where you&rsquo;ve opted in, send updates about
-            new collections and releases.
+            products and site experience, and, where you&rsquo;ve opted in, send updates about new
+            collections and releases.
           </p>
         </section>
         <section>

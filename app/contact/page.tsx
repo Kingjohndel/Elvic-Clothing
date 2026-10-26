@@ -65,7 +65,13 @@ export default function ContactPage() {
               <label htmlFor="message" className="mb-2 block text-xs text-eyebrow text-stone">
                 Message
               </label>
-              <textarea id="message" name="message" required rows={6} className="input-field h-auto py-3" />
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows={6}
+                className="input-field h-auto py-3"
+              />
             </div>
             <Button type="submit" size="lg">
               Send Message
@@ -76,7 +82,10 @@ export default function ContactPage() {
         <aside className="space-y-8">
           <div>
             <h2 className="text-eyebrow text-xs font-medium text-stone">Email</h2>
-            <a href={`mailto:${siteConfig.supportEmail}`} className="link-underline mt-2 block text-sm text-ink">
+            <a
+              href={`mailto:${siteConfig.supportEmail}`}
+              className="link-underline mt-2 block text-sm text-ink"
+            >
               {siteConfig.supportEmail}
             </a>
           </div>
@@ -103,7 +112,12 @@ export default function ContactPage() {
                 ['X', siteConfig.social.x],
               ].map(([label, href]) => (
                 <li key={label}>
-                  <a href={href} target="_blank" rel="noopener noreferrer" className="link-underline text-sm text-ink">
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-underline text-sm text-ink"
+                  >
                     {label}
                   </a>
                 </li>

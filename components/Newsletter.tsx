@@ -21,7 +21,9 @@ export default function Newsletter({ variant = 'light' }: { variant?: 'light' | 
       <h2 className="mt-4 font-display text-3xl leading-tight sm:text-4xl">
         Stay in the World of Elvic
       </h2>
-      <p className={`mt-4 max-w-md text-sm leading-relaxed ${isDark ? 'text-bone/80' : 'text-graphite'}`}>
+      <p
+        className={`mt-4 max-w-md text-sm leading-relaxed ${isDark ? 'text-bone/80' : 'text-graphite'}`}
+      >
         Be the first to discover new collections, exclusive releases and stories from ELVIC.
       </p>
 

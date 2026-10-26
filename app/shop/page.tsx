@@ -19,9 +19,16 @@ export default function ShopPage() {
       <div className="container-elvic py-6 md:py-8">
         <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Shop' }]} />
       </div>
-      <CategoryBanner slug="shop" eyebrow="Full Catalog" title="Shop All" description="Explore the complete ELVIC shop, from everyday essentials to statement pieces across every brand." />
+      <CategoryBanner
+        slug="shop"
+        eyebrow="Full Catalog"
+        title="Shop All"
+        description="Explore the complete ELVIC shop, from everyday essentials to statement pieces across every brand."
+      />
       <div className="container-elvic py-10 md:py-12">
-        <Suspense fallback={<div className="py-24 text-center text-sm text-stone">Loading catalog…</div>}>
+        <Suspense
+          fallback={<div className="py-24 text-center text-sm text-stone">Loading catalog…</div>}
+        >
           <ShopClient products={products} showBrandFilter searchCategoryMenu variant="catalog" />
         </Suspense>
       </div>

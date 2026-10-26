@@ -11,6 +11,8 @@ const bodoniModa = Bodoni_Moda({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
+  // Next's bundled fallback metrics do not include Bodoni Moda.
+  adjustFontFallback: false,
 });
 
 const inter = Inter({

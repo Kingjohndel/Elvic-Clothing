@@ -31,7 +31,7 @@ export default function WishlistButton({
       className={cn(
         'flex items-center justify-center rounded-full bg-ivory/90 backdrop-blur-sm transition-colors hover:bg-ivory',
         dim,
-        className
+        className,
       )}
     >
       <svg

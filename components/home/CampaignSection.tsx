@@ -1,10 +1,10 @@
-import PlaceholderImage from '@/components/ui/PlaceholderImage';
+import CatalogImage from '@/components/ui/CatalogImage';
 
 export default function CampaignSection() {
   return (
     <section className="relative flex h-[70vh] min-h-[480px] items-center justify-center overflow-hidden bg-ink text-ivory">
       <div className="absolute inset-0">
-        <PlaceholderImage tone={8} monogram={false} />
+        <CatalogImage tone={8} />
         <div className="absolute inset-0 bg-ink/35" />
       </div>
       <div className="relative z-10 px-6 text-center">
