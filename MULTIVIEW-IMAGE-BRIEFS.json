@@ -1,0 +1,171 @@
+{
+  "productViewSheets": {
+    "layout": "Two equal portrait panels in one landscape sheet: back on left, side profile on right.",
+    "reference": "public/images/original-products/{productId}-{colourIndex}.webp",
+    "constraints": "Preserve reference garment colour, material, proportions, closures and pockets; warm ivory studio; whole garment visible; no people, models, faces, body parts, mannequins, logos, text, or copied campaigns.",
+    "variants": [
+      [
+        "p1",
+        0,
+        "Black",
+        "plain black heavyweight cotton crewneck T-shirt"
+      ],
+      [
+        "p1",
+        1,
+        "White",
+        "plain bright white heavyweight cotton crewneck T-shirt"
+      ],
+      [
+        "p2",
+        0,
+        "Blue",
+        "light blue fine striped cotton poplin long-sleeved button-down shirt"
+      ],
+      [
+        "p2",
+        1,
+        "Green Stripe",
+        "sage green and white fine striped cotton poplin long-sleeved button-down shirt"
+      ],
+      [
+        "p3",
+        0,
+        "Black",
+        "plain black oversized cotton hoodie with kangaroo pocket and drawstring hood"
+      ],
+      [
+        "p4",
+        0,
+        "Black",
+        "black tailored wide-leg trousers with pressed creases"
+      ],
+      [
+        "p5",
+        0,
+        "Black",
+        "black women's structured tailored blazer with notch lapels and fitted waist"
+      ],
+      [
+        "p6",
+        0,
+        "Black",
+        "plain black cotton loopback crewneck sweatshirt"
+      ],
+      [
+        "p6",
+        1,
+        "White",
+        "plain ivory white cotton loopback crewneck sweatshirt"
+      ],
+      [
+        "p7",
+        0,
+        "Parachute Beige",
+        "parachute beige casual cotton utility shorts with elastic waist and side pockets"
+      ],
+      [
+        "p7",
+        1,
+        "Black",
+        "black casual cotton utility shorts with elastic waist and side pockets"
+      ],
+      [
+        "p8",
+        0,
+        "Black",
+        "plain black cotton six-panel baseball cap with curved brim"
+      ],
+      [
+        "p9",
+        0,
+        "Black",
+        "black women's pleated high-waisted wide-leg tailored trousers"
+      ],
+      [
+        "p9",
+        1,
+        "Chocolate",
+        "chocolate brown women's pleated high-waisted wide-leg tailored trousers"
+      ],
+      [
+        "p10",
+        0,
+        "Black Merle",
+        "dark charcoal black merle textured knit short-sleeved open collar polo shirt"
+      ],
+      [
+        "p11",
+        0,
+        "Black",
+        "black satin slip midi dress with delicate thin shoulder straps"
+      ],
+      [
+        "p12",
+        0,
+        "Beige",
+        "plain natural beige cotton canvas tote bag with two long shoulder handles"
+      ],
+      [
+        "p13",
+        0,
+        "Black / Olive Strata",
+        "black and muted olive ribbed knit beanie with folded cuff"
+      ],
+      [
+        "p14",
+        0,
+        "Harbour Blue",
+        "harbour blue relaxed straight leg denim jeans"
+      ],
+      [
+        "p14",
+        1,
+        "Washed Bone",
+        "washed bone ivory relaxed straight leg denim jeans"
+      ]
+    ]
+  },
+  "brandCovers": {
+    "layout": "Portrait 4:5 editorial product still life; quiet lower quarter for website caption.",
+    "constraints": "Unbranded garments and accessories only; no people, faces, body parts, mannequins, logos, text, or copied campaigns.",
+    "brands": [
+      [
+        "tommy-hilfiger",
+        "preppy American sportswear: a folded navy cable-knit sweater, ivory oxford button-down, deep red tie and neatly folded indigo denim, arranged on warm ivory linen with a small dark oak accent; restrained navy, cream and burgundy palette"
+      ],
+      [
+        "ashluxe",
+        "contemporary luxury streetwear: sculptural oversized charcoal hoodie, ivory heavyweight boxy tee, black cargo trousers and a matte silver chain arranged across dark concrete plinths; confident monochrome styling and soft hard-edged shadows"
+      ],
+      [
+        "versace",
+        "dramatic Italian evening luxury: lustrous black satin garment draped in sculptural folds, tailored black jacket edge, polished gold chain accessories and a subtle ornate gold fabric accent on warm dark stone; black-and-gold editorial richness without recognizable branded prints"
+      ],
+      [
+        "nike",
+        "modern performance sportswear: lightweight black running shorts, folded slate technical tee, white athletic socks and an unbranded training shoe on light concrete, with a restrained vivid red cord accent and dynamic diagonal composition"
+      ],
+      [
+        "adidas",
+        "archive-inspired sport and streetwear: navy zip-front track jacket with solid cream piping, ivory ribbed tee, clean white low-top unbranded sneakers and a dark baseball cap on pale stone; restrained navy-and-cream retro sports aesthetic, no stripes or logos"
+      ],
+      [
+        "calvin-klein",
+        "minimalist modern essentials: crisp white cotton tee, folded black denim and a plain charcoal cotton layer, precise negative space and clean geometry on warm ivory stone; sophisticated black, white and soft grey palette"
+      ],
+      [
+        "ralph-lauren",
+        "heritage Ivy-inspired menswear: oatmeal cable-knit sweater, pale blue oxford shirt, burgundy tie, brown leather belt and folded tan chinos on warm oak beside cream linen; polished understated heritage styling"
+      ],
+      [
+        "hugo",
+        "directional urban tailoring: sharply cut black blazer, folded charcoal tailored trousers, plain white poplin shirt and a narrow muted red fabric accent on geometric grey stone plinths; architectural, contemporary city wardrobe"
+      ],
+      [
+        "lacoste",
+        "heritage tennis styling: forest green pique polo shirt, cream knit layer, crisp white shorts, plain tennis racket and two tennis balls on pale sage and ivory studio surface; refined country-club sports palette"
+      ]
+    ]
+  }
+}
