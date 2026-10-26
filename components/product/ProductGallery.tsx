@@ -19,7 +19,9 @@ export default function ProductGallery({ productId, color, name }: { productId: 
       if (event.key === 'ArrowLeft') { event.preventDefault(); choose(active - 1); }
     }}>
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-bone">
-        <PlaceholderImage productId={productId} color={color} view={active} label={`${name}: ${color}, ${views[active]} view`} priority />
+        <div key={`${selectionKey}:${active}`} className="product-view-frame h-full w-full">
+          <PlaceholderImage productId={productId} color={color} view={active} label={`${name}: ${color}, ${views[active]} view`} priority />
+        </div>
         <span className="absolute left-4 top-4 bg-ivory/95 px-3 py-1.5 text-[10px] uppercase tracking-widest text-ink">{views[active]} view</span>
         {photo.images.length > 1 && <div className="pointer-events-none absolute inset-x-0 top-1/2 flex -translate-y-1/2 items-center justify-between px-3 sm:px-4">
           <button type="button" aria-label="Previous product view" title="Previous view" onClick={() => choose(active - 1)} className="pointer-events-auto flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line bg-ivory/95 text-ink shadow-sm backdrop-blur-sm transition-colors hover:border-ink hover:bg-ink hover:text-ivory focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink active:bg-ink active:text-ivory sm:h-12 sm:w-12">

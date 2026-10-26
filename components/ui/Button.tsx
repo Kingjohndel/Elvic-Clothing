@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
-type Variant = 'primary' | 'secondary' | 'ghost' | 'invert' | 'invertOutline';
+type Variant = 'primary' | 'secondary' | 'ghost' | 'invert' | 'invertOutline' | 'campaignSolid' | 'campaignOutline';
 type Size = 'md' | 'lg';
 
 const base =
@@ -19,6 +19,8 @@ const variants: Record<Variant, string> = {
   // For use on dark/campaign backgrounds.
   invert: 'bg-ivory text-ink hover:bg-bone',
   invertOutline: 'border border-ivory text-ivory hover:bg-ivory hover:text-ink',
+  campaignSolid: 'hero-cta hero-cta-dark',
+  campaignOutline: 'hero-cta hero-cta-light',
 };
 
 const sizes: Record<Size, string> = {
@@ -42,19 +44,23 @@ type ButtonAsLink = CommonProps &
 export default function Button(props: ButtonAsButton | ButtonAsLink) {
   const { variant = 'primary', size = 'md', className, children, ...rest } = props;
   const classes = cn(base, variants[variant], sizes[size], className);
+  const content = variant === 'campaignSolid' || variant === 'campaignOutline' ? <>
+    <span>{children}</span>
+    <span aria-hidden="true" className="hero-cta-reveal">{children}</span>
+  </> : children;
 
   if ('href' in props && props.href) {
     const { href, ...anchorRest } = rest as AnchorHTMLAttributes<HTMLAnchorElement>;
     return (
       <Link href={props.href} className={classes} {...anchorRest}>
-        {children}
+        {content}
       </Link>
     );
   }
 
   return (
     <button className={classes} {...(rest as ButtonHTMLAttributes<HTMLButtonElement>)}>
-      {children}
+      {content}
     </button>
   );
 }

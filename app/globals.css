@@ -102,42 +102,57 @@ textarea:focus-visible,
   transform-origin: left;
 }
 
-/* The hero actions fill from left to right, without moving their labels. */
+/* CSS entrances keep hero copy independent of client-side hydration. */
+@keyframes elvic-intro { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.hero-enter { animation: elvic-intro 650ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.hero-enter-title { animation-delay: 80ms; }
+.hero-enter-description { animation-delay: 160ms; }
+.hero-enter-actions { animation-delay: 240ms; }
+
+/* One clipped layer owns the fill and its matching label colour. */
 .hero-cta {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  transition: color 300ms ease, border-color 300ms ease, transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+  border: 1px solid #f6f3ee;
+  transition: border-color 250ms ease;
 }
-.hero-cta::before {
-  content: '';
+.hero-cta-dark { background: #f6f3ee; color: #111110; --cta-fill: #111110; --cta-label: #f6f3ee; }
+.hero-cta-light { background: transparent; color: #f6f3ee; --cta-fill: #f6f3ee; --cta-label: #111110; }
+.hero-cta-reveal {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: inherit;
+  background: var(--cta-fill);
+  color: var(--cta-label);
   pointer-events: none;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 500ms cubic-bezier(0.65, 0, 0.35, 1);
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 450ms cubic-bezier(0.65, 0, 0.35, 1);
 }
-.hero-cta-dark::before { background: #111110; }
-.hero-cta-light::before { background: #f6f3ee; }
-.hero-cta-dark:is(:hover, :focus-visible, :active) { background: #f6f3ee; color: #f6f3ee; }
-.hero-cta-light:is(:hover, :focus-visible, :active) { background: transparent; color: #111110; }
-.hero-cta:is(:focus-visible, :active)::before { transform: scaleX(1); }
+.hero-cta:is(:hover, :focus-visible, :active) .hero-cta-reveal { clip-path: inset(0); }
 .hero-cta:focus-visible { outline-color: #f6f3ee; outline-offset: 5px; }
-@media (hover: hover) and (pointer: fine) {
-  .hero-cta:hover::before { transform: scaleX(1); }
-  .hero-cta:hover { transform: translateY(-2px); }
-}
 @media (hover: none), (pointer: coarse) {
-  .hero-cta-dark:hover { color: #111110; }
-  .hero-cta-light:hover { color: #f6f3ee; }
-  .hero-cta-dark:is(:focus-visible, :active) { color: #f6f3ee; }
-  .hero-cta-light:is(:focus-visible, :active) { color: #111110; }
+  .hero-cta-reveal { transition-duration: 140ms; }
 }
+
+/* Product image previews are optional on mouse hover, never required on touch. */
+.product-card-image { transition: transform 550ms cubic-bezier(0.22, 1, 0.36, 1); }
+.product-card-alternate { transition: opacity 350ms ease; }
+@media (hover: hover) and (pointer: fine) {
+  .product-card-image:hover { transform: scale(1.03); }
+  .product-card-image:hover .product-card-alternate { opacity: 1; }
+}
+.product-card-image:focus-visible .product-card-alternate { opacity: 1; }
+@keyframes product-view-in { from { opacity: 0; } to { opacity: 1; } }
+.product-view-frame { animation: product-view-in 180ms ease-out; }
 @media (prefers-reduced-motion: reduce) {
-  .hero-cta, .hero-cta::before { transition: none; }
-  .hero-cta:hover { transform: none; }
+  .hero-cta, .hero-cta-reveal, .product-card-image, .product-card-alternate { transition: none; }
+  .product-card-image:hover { transform: none; }
+  .product-view-frame { animation: none; }
 }
 
 /* Hide scrollbar for horizontally-scrolling strips while keeping them scrollable */
@@ -231,15 +246,15 @@ h1, h2, h3, p { overflow-wrap: break-word; }
 }
 @media (hover: hover) and (pointer: fine) {
   .lookbook-interactive:hover {
-    transform: translateY(-10px);
+    transform: translateY(-6px);
     box-shadow: 0 18px 32px -16px rgb(17 17 16 / 35%);
   }
 }
 .lookbook-interactive:focus-visible {
-  transform: translateY(-10px);
+  transform: translateY(-6px);
   box-shadow: 0 18px 32px -16px rgb(17 17 16 / 35%);
 }
-.lookbook-interactive:active { transform: translateY(-4px); }
+.lookbook-interactive:active { transform: translateY(-2px); }
 @media (prefers-reduced-motion: reduce) {
   .lookbook-interactive { transition: none; }
   .lookbook-interactive:is(:hover, :focus-visible, :active) { transform: none; }
@@ -250,7 +265,7 @@ h1, h2, h3, p { overflow-wrap: break-word; }
 .brand-card, .brand-featured-card {
   position: relative;
   top: 0;
-  transition: top 500ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 500ms ease;
+  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 450ms ease;
 }
 .brand-card .brand-card-image:is(:hover, :focus-visible, :active) {
   transform: none;
@@ -261,7 +276,7 @@ h1, h2, h3, p { overflow-wrap: break-word; }
 @media (hover: hover) and (pointer: fine) {
   .brand-card:has(.brand-card-image:hover),
   .brand-featured-card:has(.brand-card-image:hover) {
-    top: -10px;
+    transform: translateY(-6px);
     box-shadow: 0 18px 32px -16px rgb(17 17 16 / 25%);
   }
   .brand-card:has(.brand-card-image:hover) .brand-shop-link::after {
@@ -272,7 +287,7 @@ h1, h2, h3, p { overflow-wrap: break-word; }
   .brand-shop-link:hover .brand-shop-arrow { left: 4px; }
 }
 .brand-card:focus-within, .brand-featured-card:focus-within {
-  top: -10px;
+  transform: translateY(-6px);
   box-shadow: 0 18px 32px -16px rgb(17 17 16 / 25%);
 }
 .brand-card:focus-within .brand-shop-link::after { transform: scaleX(1); transform-origin: left; }
@@ -302,10 +317,10 @@ h1, h2, h3, p { overflow-wrap: break-word; }
 .home-hover-card .category-cta::after { bottom: 0; }
 #top-brands-row { padding-top: 12px; margin-top: 12px; padding-bottom: 20px; }
 @media (hover: hover) and (pointer: fine) {
-  .home-hover-card:hover .lookbook-image { transform: scale(1.06) translateX(0.6%); }
+  .home-hover-card:hover .lookbook-image { transform: scale(1.04) translateX(0.4%); }
   .home-hover-card:hover .link-underline::after { transform: scaleX(1); transform-origin: left; }
 }
-.home-hover-card:focus-visible .lookbook-image { transform: scale(1.06) translateX(0.6%); }
+.home-hover-card:focus-visible .lookbook-image { transform: scale(1.04) translateX(0.4%); }
 .home-hover-card:focus-visible .link-underline::after { transform: scaleX(1); transform-origin: left; }
 @media (prefers-reduced-motion: reduce) {
   .home-hover-card:is(:hover, :focus-visible, :active) .lookbook-image { transform: none; }
@@ -317,13 +332,13 @@ h1, h2, h3, p { overflow-wrap: break-word; }
 .collection-card {
   position: relative;
   top: 0;
-  transition: top 500ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 500ms ease;
+  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 450ms ease;
 }
 @media (hover: hover) and (pointer: fine) {
-  .collection-card:hover { top: -8px; box-shadow: 0 18px 32px -16px rgb(17 17 16 / 25%); }
+  .collection-card:hover { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgb(17 17 16 / 25%); }
 }
-.collection-card:focus-visible { top: -8px; box-shadow: 0 18px 32px -16px rgb(17 17 16 / 25%); }
+.collection-card:focus-visible { transform: translateY(-6px); box-shadow: 0 18px 32px -16px rgb(17 17 16 / 25%); }
 @media (prefers-reduced-motion: reduce) {
   .collection-card { transition: none; }
-  .collection-card:is(:hover, :focus-visible) { top: 0; }
+  .collection-card:is(:hover, :focus-visible) { transform: none; }
 }

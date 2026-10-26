@@ -108,7 +108,8 @@ export default function ShopClient({
 
   function navigatePage(nextPage: number) {
     setPage(nextPage);
-    resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    resultsRef.current?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
   }
 
   function chooseSort(value: SortKey) {

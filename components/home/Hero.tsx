@@ -1,6 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
 
 export default function Hero() {
@@ -19,46 +16,34 @@ export default function Hero() {
       </div>
 
       <div className="container-elvic relative z-10 w-full py-12 md:py-16">
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.65, 0, 0.35, 1] }}
-          className="text-eyebrow text-xs font-medium text-bone/80"
+        <p
+          className="hero-enter text-eyebrow text-xs font-medium text-bone/80"
         >
           Elvic Clothing — Autumn Collection
-        </motion.p>
+        </p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.1, ease: [0.65, 0, 0.35, 1] }}
-          className="mt-5 max-w-3xl font-display text-6xl leading-[0.95] sm:text-7xl md:text-8xl"
+        <h1
+          className="hero-enter hero-enter-title mt-5 max-w-3xl font-display text-6xl leading-[0.95] sm:text-7xl md:text-8xl"
         >
           Wear Your Identity.
-        </motion.h1>
+        </h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: [0.65, 0, 0.35, 1] }}
-          className="mt-6 max-w-md text-base leading-relaxed text-bone/85"
+        <p
+          className="hero-enter hero-enter-description mt-6 max-w-md text-base leading-relaxed text-bone/85"
         >
           Considered pieces, curated with intention. ELVIC brings together the labels worth wearing: for people who want their clothing to speak before they do.
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.45, ease: [0.65, 0, 0.35, 1] }}
-          className="mt-10 flex flex-wrap items-center gap-4"
+        <div
+          className="hero-enter hero-enter-actions mt-10 flex flex-wrap items-center gap-4"
         >
-          <Button href="/shop" variant="invert" size="lg" className="hero-cta hero-cta-dark w-full sm:w-auto">
-            <span className="relative z-10">Shop Collection</span>
+          <Button href="/shop" variant="campaignSolid" size="lg" className="w-full sm:w-auto">
+            Shop Collection
           </Button>
-          <Button href="/about" variant="invertOutline" size="lg" className="hero-cta hero-cta-light w-full sm:w-auto">
-            <span className="relative z-10">Discover Elvic</span>
+          <Button href="/about" variant="campaignOutline" size="lg" className="w-full sm:w-auto">
+            Discover Elvic
           </Button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

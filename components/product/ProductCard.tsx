@@ -23,14 +23,14 @@ export default function ProductCard({
   const [quickAddOpen, setQuickAddOpen] = useState(false);
 
   return (
-    <div className="group relative flex min-w-0 flex-col">
+    <div className="product-card group relative flex min-w-0 flex-col">
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-bone">
         <Link
           href={`/product/${product.slug}`}
-          className="relative block h-full w-full transition-transform duration-700 ease-editorial group-hover:scale-[1.03]"
+          className="product-card-image relative block h-full w-full"
         >
           <PlaceholderImage productId={product.id} color={selectedColor} label={`${product.brandName} ${product.name}: ${selectedColor}`} />
-          <PlaceholderImage productId={product.id} color={selectedColor} view={1} label={`${product.brandName} ${product.name}: alternate view`} className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+          <PlaceholderImage productId={product.id} color={selectedColor} view={1} label={`${product.brandName} ${product.name}: alternate view`} className="product-card-alternate absolute inset-0 opacity-0" />
         </Link>
 
         <div className="absolute right-3 top-3">
