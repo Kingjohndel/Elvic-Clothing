@@ -27,7 +27,7 @@ export default function ProductCard({
       <div className="relative aspect-[3/4] w-full overflow-hidden bg-bone">
         <Link
           href={`/product/${product.slug}`}
-          className={cn('block h-full w-full transition-transform duration-700 ease-editorial group-hover:scale-[1.03]', variant === 'catalog' && 'relative')}
+          className="relative block h-full w-full transition-transform duration-700 ease-editorial group-hover:scale-[1.03]"
         >
           <PlaceholderImage productId={product.id} color={selectedColor} label={`${product.brandName} ${product.name}: ${selectedColor}`} />
           <PlaceholderImage productId={product.id} color={selectedColor} view={1} label={`${product.brandName} ${product.name}: alternate view`} className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />

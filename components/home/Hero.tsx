@@ -52,11 +52,11 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.45, ease: [0.65, 0, 0.35, 1] }}
           className="mt-10 flex flex-wrap items-center gap-4"
         >
-          <Button href="/shop" variant="invert" size="lg">
-            Shop Collection
+          <Button href="/shop" variant="invert" size="lg" className="hero-cta hero-cta-dark w-full sm:w-auto">
+            <span className="relative z-10">Shop Collection</span>
           </Button>
-          <Button href="/about" variant="invertOutline" size="lg">
-            Discover Elvic
+          <Button href="/about" variant="invertOutline" size="lg" className="hero-cta hero-cta-light w-full sm:w-auto">
+            <span className="relative z-10">Discover Elvic</span>
           </Button>
         </motion.div>
       </div>

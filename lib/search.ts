@@ -8,6 +8,6 @@ export function normalizeSearch(value: string) {
 }
 export function matchesProductSearch(product: Product, query: string) {
   const terms = normalizeSearch(query).split(' ').filter(Boolean);
-  const words = normalizeSearch(`${product.brandName} ${product.name} ${product.category} ${product.collection} ${product.shortDescription}`).split(' ');
+  const words = normalizeSearch(`${product.brandName} ${product.name} ${product.category} ${product.collection} ${product.shortDescription} ${product.colors.map(color => color.name).join(' ')}`).split(' ');
   return terms.length > 0 && terms.every(term => words.some(word => word.startsWith(term)));
 }

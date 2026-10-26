@@ -146,7 +146,7 @@ export default function SearchOverlay({ isOpen, onClose }: { isOpen: boolean; on
                     <li key={p.id}>
                       <Link href={`/product/${p.slug}`} onClick={onClose} className="group block">
                         <div className="aspect-[3/4] overflow-hidden bg-bone">
-                          <PlaceholderImage tone={p.tone} label={p.name} />
+                          <PlaceholderImage productId={p.id} color={p.colors[0]?.name} label={`${p.brandName} ${p.name}`} />
                         </div>
                         <p className="mt-2 text-sm text-ink">{p.name}</p>
                         <p className="text-xs text-stone">{formatPrice(p.price)}</p>
